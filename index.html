@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>César Adrián Galván Medrano | Portfolio Single-Page</title>
+    <meta
+      name="description"
+      content="Portfolio de César Adrián Galván Medrano. Desarrollo páginas web single-page, front-end polish y coordinación ágil con tarifa de $30 USD por hora."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true">
+      <span class="scroll-progress-bar" id="scroll-progress-bar"></span>
+    </div>
+
+    <div class="background-orb orb-a"></div>
+    <div class="background-orb orb-b"></div>
+
+    <header class="site-header sticky-top pt-3">
+      <div class="container-xxl">
+        <nav class="navbar navbar-expand-lg surface-nav">
+          <div class="container-fluid px-2 px-lg-3">
+            <a class="navbar-brand brand d-inline-flex align-items-center gap-3 m-0" href="#inicio">
+              <span class="brand-mark">CG</span>
+              <span class="brand-text">César Galván</span>
+            </a>
+
+            <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
+              <button
+                class="btn btn-theme-toggle rounded-pill"
+                id="theme-toggle"
+                type="button"
+                aria-label="Cambiar tema"
+              >
+                <span id="theme-toggle-icon" aria-hidden="true"></span>
+              </button>
+
+              <button
+                class="navbar-toggler border-0 shadow-none"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#portfolio-navbar"
+                aria-controls="portfolio-navbar"
+                aria-expanded="false"
+                aria-label="Abrir navegación"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-lg-2 mt-3 mt-lg-0" id="portfolio-navbar">
+              <div class="navbar-nav ms-auto align-items-lg-center gap-lg-2" id="portfolio-nav">
+                <a class="nav-link" href="#inicio">Inicio</a>
+                <a class="nav-link" href="#perfil">Perfil</a>
+                <a class="nav-link" href="#servicios">Servicios</a>
+                <a class="nav-link" href="#experiencia">Experiencia</a>
+                <a class="nav-link" href="#stack">Stack</a>
+                <a class="nav-link" href="#contacto">Contacto</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="page-root">
+      <section class="section-shell hero-section is-current" id="inicio">
+        <div class="container-xxl">
+          <div class="row g-4 align-items-stretch">
+            <div class="col-lg-7">
+              <div class="hero-copy" data-reveal>
+                <span class="eyebrow">
+                  Single-page websites · Project Management · Scrum delivery
+                </span>
+                <h1 class="hero-title">
+                  Desarrollo páginas single-page con diseño minimalista y enfoque en entrega.
+                </h1>
+                <p class="hero-text lead mb-0">
+                  Soy César Adrián Galván Medrano, ingeniero de software con experiencia en
+                  desarrollo front-end, Project Management y Scrum Master. Combino diseño limpio,
+                  ejecución técnica y seguimiento ágil para construir sitios web claros, rápidos y
+                  listos para convertir.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                  <a class="btn btn-portfolio-primary btn-lg rounded-pill px-4" href="#contacto">
+                    <i data-lucide="send"></i>
+                    Solicitar una página
+                  </a>
+                  <a
+                    class="btn btn-portfolio-outline btn-lg rounded-pill px-4"
+                    href="https://wa.me/525555094243?text=Hola%20C%C3%A9sar%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20single-page."
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    WhatsApp
+                  </a>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2 hero-meta mt-4">
+                  <span class="pill-chip">
+                    <i data-lucide="badge-dollar-sign"></i>
+                    $30 USD por hora
+                  </span>
+                  <span class="pill-chip">
+                    <i data-lucide="monitor-smartphone"></i>
+                    Light mode + dark mode
+                  </span>
+                  <span class="pill-chip">
+                    <i data-lucide="map-pinned"></i>
+                    Ciudad de México · Remoto
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="row g-3 h-100">
+                <div class="col-12" data-reveal>
+                  <article class="card surface-card highlight-card h-100 border-0">
+                    <div class="card-body p-4">
+                      <p class="card-label">En qué te ayudo</p>
+                      <h2 class="card-title mb-3">Presencia web clara, rápida y profesional.</h2>
+                      <ul class="list-clean d-grid gap-3 m-0">
+                        <li>
+                          <i data-lucide="layout-template"></i>
+                          Landing pages y portfolios de una sola página
+                        </li>
+                        <li>
+                          <i data-lucide="sparkles"></i>
+                          Mejora visual y pulido front-end
+                        </li>
+                        <li>
+                          <i data-lucide="briefcase-business"></i>
+                          Gestión de entregables con disciplina ágil
+                        </li>
+                      </ul>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-md-6 col-lg-12" data-reveal>
+                  <article class="card surface-card h-100 border-0">
+                    <div class="card-body p-4">
+                      <p class="card-label">Contacto directo</p>
+                      <div class="contact-shortcuts d-grid gap-2">
+                        <a href="mailto:cesar.galvanmedrano@gmail.com">
+                          cesar.galvanmedrano@gmail.com
+                        </a>
+                        <a href="tel:+525555094243">+52 55 5509 4243</a>
+                      </div>
+
+                      <div class="social-row mt-4" aria-label="Redes y contacto">
+                        <a
+                          class="social-link"
+                          href="https://wa.me/525555094243"
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label="WhatsApp"
+                        >
+                          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                        <a
+                          class="social-link"
+                          href="mailto:cesar.galvanmedrano@gmail.com"
+                          aria-label="Email"
+                        >
+                          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        </a>
+                        <a class="social-link" href="tel:+525555094243" aria-label="Teléfono">
+                          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        </a>
+                        <a
+                          class="social-link"
+                          href="https://www.linkedin.com/in/cesargalvanmedrano/"
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label="LinkedIn"
+                        >
+                          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-md-6 col-lg-12" data-reveal>
+                  <article class="card surface-card h-100 border-0">
+                    <div class="card-body p-4">
+                      <p class="card-label">También aporto</p>
+                      <div class="d-flex flex-wrap gap-2">
+                        <span class="badge stack-badge">Project Manager</span>
+                        <span class="badge stack-badge">Scrum Master</span>
+                        <span class="badge stack-badge">Stakeholder Reporting</span>
+                        <span class="badge stack-badge">Jira & Confluence</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="perfil">
+        <div class="container-xxl">
+          <div class="section-heading" data-reveal>
+            <span class="eyebrow">Perfil</span>
+            <h2>Desarrollo web con mentalidad de delivery.</h2>
+            <p class="section-copy mb-0">
+              Mi experiencia mezcla construcción de interfaces, sitios para clientes, QA de
+              aplicaciones y coordinación de trabajo con equipos técnicos y stakeholders.
+            </p>
+          </div>
+
+          <div class="row g-4 mt-1">
+            <div class="col-lg-7" data-reveal>
+              <article class="card surface-card h-100 border-0">
+                <div class="card-body p-4 p-lg-5">
+                  <p>
+                    He trabajado en desarrollo front-end con React, TypeScript, JavaScript, HTML,
+                    CSS, SCSS y Vue, además de pruebas con Jest y Cypress. También he entregado
+                    landing pages y websites para múltiples clientes en entornos de trabajo ágiles.
+                  </p>
+                  <p class="mb-0">
+                    Como Associate Project Manager y Scrum Master estructuré ceremonias, flujos en
+                    Jira, seguimiento de avances y reportes a stakeholders. Esa combinación hace
+                    que no sólo diseñe la página, sino que la lleve con orden, claridad y buen
+                    ritmo de entrega.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="row g-3">
+                <div class="col-sm-6 col-lg-12" data-reveal>
+                  <article class="card surface-card metric-card border-0 h-100">
+                    <div class="card-body p-4">
+                      <strong class="metric-value">8+</strong>
+                      <p class="metric-label mb-0">
+                        Años participando en proyectos web y de software
+                      </p>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-sm-6 col-lg-12" data-reveal>
+                  <article class="card surface-card metric-card border-0 h-100">
+                    <div class="card-body p-4">
+                      <strong class="metric-value">PM</strong>
+                      <p class="metric-label mb-0">
+                        Experiencia en Project Management, Scrum y seguimiento de entregables
+                      </p>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12" data-reveal>
+                  <article class="card surface-card metric-card border-0 h-100">
+                    <div class="card-body p-4">
+                      <strong class="metric-value">B2</strong>
+                      <p class="metric-label mb-0">
+                        Inglés para colaborar con clientes y equipos internacionales
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="servicios">
+        <div class="container-xxl">
+          <div class="section-heading" data-reveal>
+            <span class="eyebrow">Servicios</span>
+            <h2>Servicios enfocados en páginas web single-page.</h2>
+            <p class="section-copy mb-0">
+              Trabajo en proyectos pequeños, iteraciones puntuales o una landing completa con una
+              estructura simple y orientada a contacto.
+            </p>
+          </div>
+
+          <div class="row g-4 mt-1">
+            <div class="col-md-6 col-xl-3" data-reveal>
+              <article class="card surface-card service-card border-0 h-100">
+                <div class="card-body p-4">
+                  <div class="service-icon">
+                    <i data-lucide="panel-top-open"></i>
+                  </div>
+                  <h3>Landing pages y portfolios</h3>
+                  <p class="mb-0">
+                    Páginas de una sola pantalla con jerarquía visual clara, contenido ordenado y
+                    llamados a la acción visibles.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-reveal>
+              <article class="card surface-card service-card border-0 h-100">
+                <div class="card-body p-4">
+                  <div class="service-icon">
+                    <i data-lucide="smartphone"></i>
+                  </div>
+                  <h3>Responsive y dark/light mode</h3>
+                  <p class="mb-0">
+                    Ajusto layout, tipografía, espaciado y comportamiento entre desktop, tablet y
+                    mobile, incluyendo temas claro y oscuro.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-reveal>
+              <article class="card surface-card service-card border-0 h-100">
+                <div class="card-body p-4">
+                  <div class="service-icon">
+                    <i data-lucide="messages-square"></i>
+                  </div>
+                  <h3>Contacto y conversión</h3>
+                  <p class="mb-0">
+                    Integro WhatsApp, correo, teléfono y formularios simples para que la página te
+                    ayude a recibir mensajes, no sólo a verse bien.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-reveal>
+              <article class="card surface-card service-card border-0 h-100">
+                <div class="card-body p-4">
+                  <div class="service-icon">
+                    <i data-lucide="kanban-square"></i>
+                  </div>
+                  <h3>Iteraciones con orden ágil</h3>
+                  <p class="mb-0">
+                    Si el proyecto lo necesita, también puedo manejar seguimiento, prioridades y
+                    entregables con enfoque de Project Manager / Scrum Master.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="row g-4 mt-1">
+            <div class="col-lg-7" data-reveal>
+              <article class="card surface-card highlight-card border-0 h-100">
+                <div class="card-body p-4 p-lg-5">
+                  <p class="card-label">Tarifa</p>
+                  <h3 class="pricing-title">$30 USD por hora</h3>
+                  <p class="mb-0">
+                    Modelo de cobro transparente para mejoras puntuales, refinamiento visual o una
+                    página single-page completa lista para publicación.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-5" data-reveal>
+              <article class="card surface-card border-0 h-100">
+                <div class="card-body p-4">
+                  <ul class="list-clean d-grid gap-3 m-0">
+                    <li>
+                      <i data-lucide="check-check"></i>
+                      HTML, CSS, JavaScript y Bootstrap listos para publicar
+                    </li>
+                    <li>
+                      <i data-lucide="check-check"></i>
+                      Estructura enfocada en claridad, servicio y contacto
+                    </li>
+                    <li>
+                      <i data-lucide="check-check"></i>
+                      Publicación preparada para hosting gratis
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="experiencia">
+        <div class="container-xxl">
+          <div class="section-heading" data-reveal>
+            <span class="eyebrow">Experiencia</span>
+            <h2>Desarrollo, Project Management y Scrum en proyectos reales.</h2>
+            <p class="section-copy mb-0">
+              Además de desarrollo web, también tengo experiencia formal coordinando trabajo,
+              documentación, seguimiento y comunicación con stakeholders.
+            </p>
+          </div>
+
+          <div class="row g-4 mt-1">
+            <div class="col-lg-5" data-reveal>
+              <article class="card surface-card highlight-card border-0 h-100">
+                <div class="card-body p-4 p-lg-5">
+                  <p class="card-label">Project Manager / Scrum Master</p>
+                  <h3 class="mb-3">Instituto Federal de Telecomunicaciones</h3>
+                  <ul class="list-clean d-grid gap-3 m-0">
+                    <li>
+                      <i data-lucide="calendar-check-2"></i>
+                      Definí ceremonias ágiles, estructura operativa y ritmo de entrega
+                    </li>
+                    <li>
+                      <i data-lucide="clipboard-list"></i>
+                      Preparé documentación, seguimiento y reportes para liderazgo y cliente
+                    </li>
+                    <li>
+                      <i data-lucide="waypoints"></i>
+                      Di seguimiento a incidentes, dependencias y progreso con Jira
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="timeline">
+                <article class="timeline-item timeline-item-highlight" data-reveal>
+                  <span class="timeline-date">Jun 2024 · Sep 2025</span>
+                  <h3>Associate Project Manager / Scrum Master · IFT</h3>
+                  <p class="mb-0">
+                    Coordiné stakeholders internos y externos, configuré flujos en Jira, mantuve
+                    documentación y reporté estatus de entrega para una iniciativa tecnológica del
+                    sector público.
+                  </p>
+                </article>
+
+                <article class="timeline-item" data-reveal>
+                  <span class="timeline-date">Trabajo freelance actual</span>
+                  <h3>LLM Trainer · Front-end QA · Single-page apps</h3>
+                  <p class="mb-0">
+                    Refiné aplicaciones generadas en HTML, CSS y JavaScript, validando calidad
+                    visual, responsividad, funcionalidad y consistencia antes de entrega final.
+                  </p>
+                </article>
+
+                <article class="timeline-item" data-reveal>
+                  <span class="timeline-date">May 2022 · Apr 2024</span>
+                  <h3>Software Engineer (Full-Stack) · Luxoft para Expedia Group</h3>
+                  <p class="mb-0">
+                    Desarrollé y mantuve componentes de interfaz para experiencias de vuelos usando
+                    React, TypeScript y JavaScript, con soporte de testing en Jest y Cypress.
+                  </p>
+                </article>
+
+                <article class="timeline-item" data-reveal>
+                  <span class="timeline-date">Jul 2018 · May 2022</span>
+                  <h3>Web Developer · Nerdy Trust</h3>
+                  <p class="mb-0">
+                    Diseñé y entregué landing pages y sitios web para clientes como BAMF, enDrive,
+                    Turbodega, Ubuken, TED y NAFIN, atendiendo cambios y mejoras iterativas.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="stack">
+        <div class="container-xxl">
+          <div class="section-heading" data-reveal>
+            <span class="eyebrow">Stack</span>
+            <h2>Tecnología, QA y gestión ágil destacadas.</h2>
+            <p class="section-copy mb-0">
+              No sólo trabajo la parte visual del sitio: también entiendo delivery, seguimiento,
+              calidad y comunicación de proyecto.
+            </p>
+          </div>
+
+          <div class="row g-4 mt-1">
+            <div class="col-md-6 col-xl-4" data-reveal>
+              <article class="card surface-card stack-card border-0 h-100">
+                <div class="card-body p-4">
+                  <h3>Front-end y desarrollo</h3>
+                  <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="badge stack-badge">HTML</span>
+                    <span class="badge stack-badge">CSS</span>
+                    <span class="badge stack-badge">SCSS</span>
+                    <span class="badge stack-badge">JavaScript</span>
+                    <span class="badge stack-badge">TypeScript</span>
+                    <span class="badge stack-badge">React</span>
+                    <span class="badge stack-badge">Vue</span>
+                    <span class="badge stack-badge">Bootstrap</span>
+                    <span class="badge stack-badge">Django</span>
+                    <span class="badge stack-badge">GraphQL</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-xl-4" data-reveal>
+              <article class="card surface-card stack-card border-0 h-100 stack-card-accent">
+                <div class="card-body p-4">
+                  <h3>Project Management / Scrum</h3>
+                  <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="badge stack-badge">Scrum Ceremonies</span>
+                    <span class="badge stack-badge">Sprint Planning</span>
+                    <span class="badge stack-badge">Delivery Coordination</span>
+                    <span class="badge stack-badge">Stakeholder Reporting</span>
+                    <span class="badge stack-badge">Jira</span>
+                    <span class="badge stack-badge">Confluence</span>
+                    <span class="badge stack-badge">SAFe</span>
+                    <span class="badge stack-badge">CAPM</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-xl-4" data-reveal>
+              <article class="card surface-card stack-card border-0 h-100">
+                <div class="card-body p-4">
+                  <h3>Calidad y entrega</h3>
+                  <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="badge stack-badge">Jest</span>
+                    <span class="badge stack-badge">Cypress</span>
+                    <span class="badge stack-badge">Docker</span>
+                    <span class="badge stack-badge">GitHub</span>
+                    <span class="badge stack-badge">QA Validation</span>
+                    <span class="badge stack-badge">Structured Feedback</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-xl-6" data-reveal>
+              <article class="card surface-card stack-card border-0 h-100">
+                <div class="card-body p-4">
+                  <h3>Trabajo con cliente y equipo</h3>
+                  <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="badge stack-badge">Remote Collaboration</span>
+                    <span class="badge stack-badge">Client-Facing Communication</span>
+                    <span class="badge stack-badge">Documentation</span>
+                    <span class="badge stack-badge">Iteration Planning</span>
+                    <span class="badge stack-badge">Backlog Follow-up</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-xl-6" data-reveal>
+              <article class="card surface-card stack-card border-0 h-100">
+                <div class="card-body p-4">
+                  <h3>Idiomas y certificaciones</h3>
+                  <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="badge stack-badge">Español nativo</span>
+                    <span class="badge stack-badge">Inglés B2</span>
+                    <span class="badge stack-badge">Alemán A2</span>
+                    <span class="badge stack-badge">Japonés N5 en curso</span>
+                    <span class="badge stack-badge">SAFe 6 Scrum Master</span>
+                    <span class="badge stack-badge">CAPM</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="contacto">
+        <div class="container-xxl">
+          <div class="section-heading" data-reveal>
+            <span class="eyebrow">Contacto</span>
+            <h2>Si quieres una página single-page, escríbeme.</h2>
+            <p class="section-copy mb-0">
+              Cuéntame si necesitas un portfolio, landing page de servicios o una mejora visual en
+              una página existente.
+            </p>
+          </div>
+
+          <div class="row g-4 mt-1">
+            <div class="col-lg-5" data-reveal>
+              <article class="card surface-card h-100 border-0">
+                <div class="card-body p-4 p-lg-5">
+                  <p class="mb-4">
+                    Trabajo con foco en claridad visual, contacto fácil y entregas simples de
+                    mantener. Si también necesitas orden de proyecto, puedo apoyar desde el ángulo
+                    técnico y de coordinación.
+                  </p>
+
+                  <div class="contact-links d-grid gap-3">
+                    <a class="contact-link" href="mailto:cesar.galvanmedrano@gmail.com">
+                      <i data-lucide="mail"></i>
+                      cesar.galvanmedrano@gmail.com
+                    </a>
+                    <a class="contact-link" href="tel:+525555094243">
+                      <i data-lucide="phone"></i>
+                      +52 55 5509 4243
+                    </a>
+                    <a
+                      class="contact-link"
+                      href="https://wa.me/525555094243?text=Hola%20C%C3%A9sar%2C%20me%20interesa%20tu%20servicio%20de%20single-page%20website."
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i data-lucide="message-circle-more"></i>
+                      WhatsApp directo
+                    </a>
+                  </div>
+
+                  <button class="btn btn-portfolio-outline rounded-pill mt-4" id="copy-email-button" type="button">
+                    <i data-lucide="copy"></i>
+                    Copiar email
+                  </button>
+                  <p class="helper-text mt-3 mb-0" id="copy-feedback" aria-live="polite"></p>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-7" data-reveal>
+              <form class="card surface-card border-0 h-100" id="contact-form">
+                <div class="card-body p-4 p-lg-5">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="name">Nombre</label>
+                      <input
+                        class="form-control form-control-lg"
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder="Tu nombre"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label" for="email">Correo</label>
+                      <input
+                        class="form-control form-control-lg"
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="tu@email.com"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <label class="form-label" for="project">Proyecto</label>
+                      <input
+                        class="form-control form-control-lg"
+                        id="project"
+                        name="project"
+                        type="text"
+                        placeholder="Landing page, portfolio, rediseño..."
+                        required
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <label class="form-label" for="message">Mensaje</label>
+                      <textarea
+                        class="form-control"
+                        id="message"
+                        name="message"
+                        rows="6"
+                        placeholder="Cuéntame el objetivo del sitio y el estilo que buscas."
+                        required
+                      ></textarea>
+                    </div>
+
+                    <div class="col-12 d-flex flex-wrap gap-3 align-items-center">
+                      <button class="btn btn-portfolio-primary btn-lg rounded-pill px-4" type="submit">
+                        <i data-lucide="mail-plus"></i>
+                        Abrir mensaje por correo
+                      </button>
+                      <p class="helper-text mb-0" id="form-feedback" aria-live="polite"></p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container-xxl d-flex flex-column flex-md-row justify-content-between gap-3">
+        <p class="mb-0">Portfolio single-page de César Adrián Galván Medrano.</p>
+        <p class="mb-0" id="footer-year"></p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
