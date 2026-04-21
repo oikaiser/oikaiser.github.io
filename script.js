@@ -6,7 +6,7 @@ const LANGUAGE_STORAGE_KEY = "portfolio-language";
 
 const TRANSLATIONS = {
   es: {
-    metaTitle: "César Adrián Galván Medrano | Portfolio Single-Page",
+    metaTitle: "César Adrián Galván Medrano | Portfolio",
     metaDescription:
       "Portfolio de César Adrián Galván Medrano. Desarrollo páginas web single-page, front-end polish y coordinación ágil con tarifa de $30 USD por hora.",
     switchToEnglish: "Switch to English",
