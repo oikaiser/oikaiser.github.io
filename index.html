@@ -1,767 +1,604 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="page-title">César Adrián Galván Medrano | Portfolio</title>
-    <meta
-      id="page-description"
-      name="description"
-      content="Portfolio de César Adrián Galván Medrano. Desarrollo páginas web single-page, front-end polish y coordinación ágil con tarifa de $30 USD por hora."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <div class="scroll-progress" aria-hidden="true">
-      <span class="scroll-progress-bar" id="scroll-progress-bar"></span>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>César Adrián Galván Medrano — Portfolio</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════
+    NAV
+══════════════════════════════════════════ -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand">César A. Galván M.</a>
+      <ul class="nav-links mb-0">
+        <li><a href="#experience" data-i18n="nav.experience">Experiencia</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
+        <li><a href="#services" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="#education" data-i18n="nav.education">Educación</a></li>
+        <li><a href="#certifications" data-i18n="nav.certifications">Certificaciones</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <!-- Theme toggle — icon only -->
+        <button id="btn-theme" class="nav-btn nav-btn--icon" aria-label="Toggle theme">
+          <i id="theme-icon" class="fas fa-moon"></i>
+        </button>
+        <!-- Language toggle -->
+        <button id="btn-lang" class="nav-btn" aria-label="Toggle language">
+          <i class="fas fa-globe"></i>
+          <span data-i18n="nav.lang-btn">EN</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+<!-- ══════════════════════════════════════════
+    HERO
+══════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-left">
+      <p class="hero-tag fade-in fade-in-1" data-i18n="hero.tag">Scrum Master &amp; Project Manager</p>
+      <h1 class="display-name fade-in fade-in-2">
+        César <em>Adrián</em><br>Galván Medrano
+      </h1>
+      <p class="hero-summary fade-in fade-in-3" data-i18n="hero.summary">
+        Scrum Master certificado SAFe y Project Manager Asociado con experiencia en coordinación de iniciativas
+        tecnológicas, facilitación de ceremonias ágiles y comunicación clara con stakeholders en entornos remotos y con
+        clientes.
+      </p>
+      <div class="hero-ctas fade-in fade-in-4">
+        <a href="mailto:cesar.galvanmedrano@gmail.com" class="btn-primary-custom">
+          <i data-lucide="mail" style="width:14px;height:14px;"></i>
+          <span data-i18n="hero.cta.contact">Contáctame</span>
+        </a>
+        <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank" class="btn-outline-custom">
+          <i class="fab fa-linkedin"></i>
+          <span data-i18n="hero.cta.linkedin">LinkedIn</span>
+        </a>
+      </div>
+      <div class="social-row fade-in fade-in-4">
+        <a href="mailto:cesar.galvanmedrano@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank" title="LinkedIn"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      </div>
     </div>
 
-    <div class="background-orb orb-a"></div>
-    <div class="background-orb orb-b"></div>
-
-    <header class="site-header sticky-top pt-3">
-      <div class="container-xxl">
-        <nav class="navbar navbar-expand-lg surface-nav">
-          <div class="container-fluid px-2 px-lg-3">
-            <a class="navbar-brand brand d-inline-flex align-items-center gap-3 m-0" href="#inicio">
-              <span class="brand-mark">CG</span>
-              <span class="brand-text">César Galván</span>
-            </a>
-
-            <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
-              <button
-                class="btn btn-language-toggle rounded-pill"
-                id="language-toggle"
-                type="button"
-                aria-label="Switch to English"
-              >
-                <i data-lucide="languages"></i>
-                <span id="language-toggle-label">EN</span>
-              </button>
-
-              <button
-                class="btn btn-theme-toggle rounded-pill"
-                id="theme-toggle"
-                type="button"
-                aria-label="Cambiar tema"
-              >
-                <span id="theme-toggle-icon" aria-hidden="true"></span>
-              </button>
-
-              <button
-                class="navbar-toggler border-0 shadow-none"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#portfolio-navbar"
-                aria-controls="portfolio-navbar"
-                aria-expanded="false"
-                aria-label="Abrir navegación"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </div>
-
-            <div class="collapse navbar-collapse order-lg-2 mt-3 mt-lg-0" id="portfolio-navbar">
-              <div class="navbar-nav ms-auto align-items-lg-center gap-lg-2" id="portfolio-nav">
-                <a class="nav-link" href="#inicio" data-i18n="navHome">Inicio</a>
-                <a class="nav-link" href="#perfil" data-i18n="navProfile">Perfil</a>
-                <a class="nav-link" href="#servicios" data-i18n="navServices">Servicios</a>
-                <a class="nav-link" href="#experiencia" data-i18n="navExperience">Experiencia</a>
-                <a class="nav-link" href="#stack" data-i18n="navStack">Stack</a>
-                <a class="nav-link" href="#contacto" data-i18n="navContact">Contacto</a>
-              </div>
-            </div>
-          </div>
-        </nav>
+    <div class="hero-card">
+      <p class="hero-card-label" data-i18n="hero.card.label">Resumen Rápido</p>
+      <div class="stat-grid">
+        <div class="stat-item accent-border">
+          <div class="stat-num">8+</div>
+          <div class="stat-desc" data-i18n="hero.stat.years">Años de Experiencia</div>
+        </div>
+        <div class="stat-item accent2-border">
+          <div class="stat-num">6+</div>
+          <div class="stat-desc" data-i18n="hero.stat.clients">Clientes Atendidos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4</div>
+          <div class="stat-desc" data-i18n="hero.stat.langs">Idiomas</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">SAFe</div>
+          <div class="stat-desc">Scrum Master</div>
+        </div>
       </div>
-    </header>
-
-    <main id="page-root">
-      <section class="section-shell hero-section is-current" id="inicio">
-        <div class="container-xxl">
-          <div class="row g-4 align-items-stretch">
-            <div class="col-lg-7">
-              <div class="hero-copy" data-reveal>
-                <span class="eyebrow" data-i18n="heroEyebrow">
-                  Single-page websites · Project Management · Scrum delivery
-                </span>
-                <h1 class="hero-title" data-i18n="heroTitle">
-                  Desarrollo páginas single-page con diseño minimalista y enfoque en entrega.
-                </h1>
-                <p class="hero-text lead mb-0" data-i18n="heroDescription">
-                  Soy César Adrián Galván Medrano, ingeniero de software con experiencia en
-                  desarrollo front-end, Project Management y Scrum Master. Combino diseño limpio,
-                  ejecución técnica y seguimiento ágil para construir sitios web claros, rápidos y
-                  listos para convertir.
-                </p>
-
-                <div class="d-flex flex-wrap gap-3 mt-4">
-                  <a class="btn btn-portfolio-primary btn-lg rounded-pill px-4" href="#contacto">
-                    <i data-lucide="send"></i>
-                    <span data-i18n="heroPrimaryCta">Solicitar una página</span>
-                  </a>
-                  <a
-                    id="hero-whatsapp-link"
-                    class="btn btn-portfolio-outline btn-lg rounded-pill px-4"
-                    href="https://wa.me/525555094243?text=Hola%20C%C3%A9sar%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20single-page."
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                    <span data-i18n="heroWhatsappCta">WhatsApp</span>
-                  </a>
-                </div>
-
-                <div class="d-flex flex-wrap gap-2 hero-meta mt-4">
-                  <span class="pill-chip">
-                    <i data-lucide="badge-dollar-sign"></i>
-                    <span data-i18n="heroRate">$30 USD por hora</span>
-                  </span>
-                  <span class="pill-chip">
-                    <i data-lucide="monitor-smartphone"></i>
-                    <span data-i18n="heroModes">Light mode + dark mode</span>
-                  </span>
-                  <span class="pill-chip">
-                    <i data-lucide="map-pinned"></i>
-                    <span data-i18n="heroLocation">Ciudad de México · Remoto</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-5">
-              <div class="row g-3 h-100">
-                <div class="col-12" data-reveal>
-                  <article class="card surface-card highlight-card h-100 border-0">
-                    <div class="card-body p-4">
-                      <p class="card-label" data-i18n="helpLabel">En qué te ayudo</p>
-                      <h2 class="card-title mb-3" data-i18n="helpTitle">
-                        Presencia web clara, rápida y profesional.
-                      </h2>
-                      <ul class="list-clean d-grid gap-3 m-0">
-                        <li>
-                          <i data-lucide="layout-template"></i>
-                          <span data-i18n="helpItem1">
-                            Landing pages y portfolios de una sola página
-                          </span>
-                        </li>
-                        <li>
-                          <i data-lucide="sparkles"></i>
-                          <span data-i18n="helpItem2">Mejora visual y pulido front-end</span>
-                        </li>
-                        <li>
-                          <i data-lucide="briefcase-business"></i>
-                          <span data-i18n="helpItem3">
-                            Gestión de entregables con disciplina ágil
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="col-md-6 col-lg-12" data-reveal>
-                  <article class="card surface-card h-100 border-0">
-                    <div class="card-body p-4">
-                      <p class="card-label" data-i18n="directContactLabel">Contacto directo</p>
-                      <div class="contact-shortcuts d-grid gap-2">
-                        <a href="mailto:cesar.galvanmedrano@gmail.com">
-                          cesar.galvanmedrano@gmail.com
-                        </a>
-                        <a href="tel:+525555094243">+52 55 5509 4243</a>
-                      </div>
-
-                      <div class="social-row mt-4" aria-label="Redes y contacto">
-                        <a
-                          class="social-link"
-                          href="https://wa.me/525555094243"
-                          target="_blank"
-                          rel="noreferrer"
-                          aria-label="WhatsApp"
-                        >
-                          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                        </a>
-                        <a
-                          class="social-link"
-                          href="mailto:cesar.galvanmedrano@gmail.com"
-                          aria-label="Email"
-                        >
-                          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        </a>
-                        <a class="social-link" href="tel:+525555094243" aria-label="Teléfono">
-                          <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                        </a>
-                        <a
-                          class="social-link"
-                          href="https://www.linkedin.com/in/cesargalvanmedrano/"
-                          target="_blank"
-                          rel="noreferrer"
-                          aria-label="LinkedIn"
-                        >
-                          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="col-md-6 col-lg-12" data-reveal>
-                  <article class="card surface-card h-100 border-0">
-                    <div class="card-body p-4">
-                      <p class="card-label" data-i18n="extraValueLabel">También aporto</p>
-                      <div class="d-flex flex-wrap gap-2">
-                        <span class="badge stack-badge" data-i18n="extraBadgePm">
-                          Project Manager
-                        </span>
-                        <span class="badge stack-badge" data-i18n="extraBadgeScrum">
-                          Scrum Master
-                        </span>
-                        <span class="badge stack-badge" data-i18n="extraBadgeReporting">
-                          Stakeholder Reporting
-                        </span>
-                        <span class="badge stack-badge" data-i18n="extraBadgeJira">
-                          Jira & Confluence
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell" id="perfil">
-        <div class="container-xxl">
-          <div class="section-heading" data-reveal>
-            <span class="eyebrow" data-i18n="profileEyebrow">Perfil</span>
-            <h2 data-i18n="profileTitle">Desarrollo web con mentalidad de delivery.</h2>
-            <p class="section-copy mb-0" data-i18n="profileCopy">
-              Mi experiencia mezcla construcción de interfaces, sitios para clientes, QA de
-              aplicaciones y coordinación de trabajo con equipos técnicos y stakeholders.
-            </p>
-          </div>
-
-          <div class="row g-4 mt-1">
-            <div class="col-lg-7" data-reveal>
-              <article class="card surface-card h-100 border-0">
-                <div class="card-body p-4 p-lg-5">
-                  <p data-i18n="profileParagraph1">
-                    He trabajado en desarrollo front-end con React, TypeScript, JavaScript, HTML,
-                    CSS, SCSS y Vue, además de pruebas con Jest y Cypress. También he entregado
-                    landing pages y websites para múltiples clientes en entornos de trabajo ágiles.
-                  </p>
-                  <p class="mb-0" data-i18n="profileParagraph2">
-                    Como Associate Project Manager y Scrum Master estructuré ceremonias, flujos en
-                    Jira, seguimiento de avances y reportes a stakeholders. Esa combinación hace
-                    que no sólo diseñe la página, sino que la lleve con orden, claridad y buen
-                    ritmo de entrega.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-lg-5">
-              <div class="row g-3">
-                <div class="col-sm-6 col-lg-12" data-reveal>
-                  <article class="card surface-card metric-card border-0 h-100">
-                    <div class="card-body p-4">
-                      <strong class="metric-value">8+</strong>
-                      <p class="metric-label mb-0" data-i18n="profileMetricYears">
-                        Años participando en proyectos web y de software
-                      </p>
-                    </div>
-                  </article>
-                </div>
-                <div class="col-sm-6 col-lg-12" data-reveal>
-                  <article class="card surface-card metric-card border-0 h-100">
-                    <div class="card-body p-4">
-                      <strong class="metric-value">PM</strong>
-                      <p class="metric-label mb-0" data-i18n="profileMetricPm">
-                        Experiencia en Project Management, Scrum y seguimiento de entregables
-                      </p>
-                    </div>
-                  </article>
-                </div>
-                <div class="col-12" data-reveal>
-                  <article class="card surface-card metric-card border-0 h-100">
-                    <div class="card-body p-4">
-                      <strong class="metric-value">B2</strong>
-                      <p class="metric-label mb-0" data-i18n="profileMetricLanguage">
-                        Inglés para colaborar con clientes y equipos internacionales
-                      </p>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell" id="servicios">
-        <div class="container-xxl">
-          <div class="section-heading" data-reveal>
-            <span class="eyebrow" data-i18n="servicesEyebrow">Servicios</span>
-            <h2 data-i18n="servicesTitle">Servicios enfocados en páginas web single-page.</h2>
-            <p class="section-copy mb-0" data-i18n="servicesCopy">
-              Trabajo en proyectos pequeños, iteraciones puntuales o una landing completa con una
-              estructura simple y orientada a contacto.
-            </p>
-          </div>
-
-          <div class="row g-4 mt-1">
-            <div class="col-md-6 col-xl-3" data-reveal>
-              <article class="card surface-card service-card border-0 h-100">
-                <div class="card-body p-4">
-                  <div class="service-icon">
-                    <i data-lucide="panel-top-open"></i>
-                  </div>
-                  <h3 data-i18n="service1Title">Landing pages y portfolios</h3>
-                  <p class="mb-0" data-i18n="service1Copy">
-                    Páginas de una sola pantalla con jerarquía visual clara, contenido ordenado y
-                    llamados a la acción visibles.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-xl-3" data-reveal>
-              <article class="card surface-card service-card border-0 h-100">
-                <div class="card-body p-4">
-                  <div class="service-icon">
-                    <i data-lucide="smartphone"></i>
-                  </div>
-                  <h3 data-i18n="service2Title">Responsive y dark/light mode</h3>
-                  <p class="mb-0" data-i18n="service2Copy">
-                    Ajusto layout, tipografía, espaciado y comportamiento entre desktop, tablet y
-                    mobile, incluyendo temas claro y oscuro.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-xl-3" data-reveal>
-              <article class="card surface-card service-card border-0 h-100">
-                <div class="card-body p-4">
-                  <div class="service-icon">
-                    <i data-lucide="messages-square"></i>
-                  </div>
-                  <h3 data-i18n="service3Title">Contacto y conversión</h3>
-                  <p class="mb-0" data-i18n="service3Copy">
-                    Integro WhatsApp, correo, teléfono y formularios simples para que la página te
-                    ayude a recibir mensajes, no sólo a verse bien.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-xl-3" data-reveal>
-              <article class="card surface-card service-card border-0 h-100">
-                <div class="card-body p-4">
-                  <div class="service-icon">
-                    <i data-lucide="kanban-square"></i>
-                  </div>
-                  <h3 data-i18n="service4Title">Iteraciones con orden ágil</h3>
-                  <p class="mb-0" data-i18n="service4Copy">
-                    Si el proyecto lo necesita, también puedo manejar seguimiento, prioridades y
-                    entregables con enfoque de Project Manager / Scrum Master.
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div class="row g-4 mt-1">
-            <div class="col-lg-7" data-reveal>
-              <article class="card surface-card highlight-card border-0 h-100">
-                <div class="card-body p-4 p-lg-5">
-                  <p class="card-label" data-i18n="pricingLabel">Tarifa</p>
-                  <h3 class="pricing-title" data-i18n="pricingTitle">$30 USD por hora</h3>
-                  <p class="mb-0" data-i18n="pricingCopy">
-                    Modelo de cobro transparente para mejoras puntuales, refinamiento visual o una
-                    página single-page completa lista para publicación.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-lg-5" data-reveal>
-              <article class="card surface-card border-0 h-100">
-                <div class="card-body p-4">
-                  <ul class="list-clean d-grid gap-3 m-0">
-                    <li>
-                      <i data-lucide="check-check"></i>
-                      <span data-i18n="pricingCheck1">
-                        HTML, CSS, JavaScript y Bootstrap listos para publicar
-                      </span>
-                    </li>
-                    <li>
-                      <i data-lucide="check-check"></i>
-                      <span data-i18n="pricingCheck2">
-                        Estructura enfocada en claridad, servicio y contacto
-                      </span>
-                    </li>
-                    <li>
-                      <i data-lucide="check-check"></i>
-                      <span data-i18n="pricingCheck3">
-                        Publicación preparada para hosting gratis
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell" id="experiencia">
-        <div class="container-xxl">
-          <div class="section-heading" data-reveal>
-            <span class="eyebrow" data-i18n="experienceEyebrow">Experiencia</span>
-            <h2 data-i18n="experienceTitle">
-              Desarrollo, Project Management y Scrum en proyectos reales.
-            </h2>
-            <p class="section-copy mb-0" data-i18n="experienceCopy">
-              Además de desarrollo web, también tengo experiencia formal coordinando trabajo,
-              documentación, seguimiento y comunicación con stakeholders.
-            </p>
-          </div>
-
-          <div class="row g-4 mt-1">
-            <div class="col-lg-5" data-reveal>
-              <article class="card surface-card highlight-card border-0 h-100">
-                <div class="card-body p-4 p-lg-5">
-                  <p class="card-label" data-i18n="experienceHighlightLabel">
-                    Project Manager / Scrum Master
-                  </p>
-                  <h3 class="mb-3" data-i18n="experienceHighlightTitle">
-                    Instituto Federal de Telecomunicaciones
-                  </h3>
-                  <ul class="list-clean d-grid gap-3 m-0">
-                    <li>
-                      <i data-lucide="calendar-check-2"></i>
-                      <span data-i18n="experienceHighlightItem1">
-                        Definí ceremonias ágiles, estructura operativa y ritmo de entrega
-                      </span>
-                    </li>
-                    <li>
-                      <i data-lucide="clipboard-list"></i>
-                      <span data-i18n="experienceHighlightItem2">
-                        Preparé documentación, seguimiento y reportes para liderazgo y cliente
-                      </span>
-                    </li>
-                    <li>
-                      <i data-lucide="waypoints"></i>
-                      <span data-i18n="experienceHighlightItem3">
-                        Di seguimiento a incidentes, dependencias y progreso con Jira
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-lg-7">
-              <div class="timeline">
-                <article class="timeline-item timeline-item-highlight" data-reveal>
-                  <span class="timeline-date" data-i18n="timeline1Date">Jun 2024 · Sep 2025</span>
-                  <h3 data-i18n="timeline1Title">Associate Project Manager / Scrum Master · IFT</h3>
-                  <p class="mb-0" data-i18n="timeline1Copy">
-                    Coordiné stakeholders internos y externos, configuré flujos en Jira, mantuve
-                    documentación y reporté estatus de entrega para una iniciativa tecnológica del
-                    sector público.
-                  </p>
-                </article>
-
-                <article class="timeline-item" data-reveal>
-                  <span class="timeline-date" data-i18n="timeline2Date">Trabajo freelance actual</span>
-                  <h3 data-i18n="timeline2Title">LLM Trainer · Front-end QA · Single-page apps</h3>
-                  <p class="mb-0" data-i18n="timeline2Copy">
-                    Refiné aplicaciones generadas en HTML, CSS y JavaScript, validando calidad
-                    visual, responsividad, funcionalidad y consistencia antes de entrega final.
-                  </p>
-                </article>
-
-                <article class="timeline-item" data-reveal>
-                  <span class="timeline-date" data-i18n="timeline3Date">May 2022 · Apr 2024</span>
-                  <h3 data-i18n="timeline3Title">
-                    Software Engineer (Full-Stack) · Luxoft para Expedia Group
-                  </h3>
-                  <p class="mb-0" data-i18n="timeline3Copy">
-                    Desarrollé y mantuve componentes de interfaz para experiencias de vuelos usando
-                    React, TypeScript y JavaScript, con soporte de testing en Jest y Cypress.
-                  </p>
-                </article>
-
-                <article class="timeline-item" data-reveal>
-                  <span class="timeline-date" data-i18n="timeline4Date">Jul 2018 · May 2022</span>
-                  <h3 data-i18n="timeline4Title">Web Developer · Nerdy Trust</h3>
-                  <p class="mb-0" data-i18n="timeline4Copy">
-                    Diseñé y entregué landing pages y sitios web para clientes como BAMF, enDrive,
-                    Turbodega, Ubuken, TED y NAFIN, atendiendo cambios y mejoras iterativas.
-                  </p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell" id="stack">
-        <div class="container-xxl">
-          <div class="section-heading" data-reveal>
-            <span class="eyebrow" data-i18n="stackEyebrow">Stack</span>
-            <h2 data-i18n="stackTitle">Tecnología, QA y gestión ágil destacadas.</h2>
-            <p class="section-copy mb-0" data-i18n="stackCopy">
-              No sólo trabajo la parte visual del sitio: también entiendo delivery, seguimiento,
-              calidad y comunicación de proyecto.
-            </p>
-          </div>
-
-          <div class="row g-4 mt-1">
-            <div class="col-md-6 col-xl-4" data-reveal>
-              <article class="card surface-card stack-card border-0 h-100">
-                <div class="card-body p-4">
-                  <h3 data-i18n="stackFrontendTitle">Front-end y desarrollo</h3>
-                  <div class="d-flex flex-wrap gap-2 mt-3">
-                    <span class="badge stack-badge">HTML</span>
-                    <span class="badge stack-badge">CSS</span>
-                    <span class="badge stack-badge">SCSS</span>
-                    <span class="badge stack-badge">JavaScript</span>
-                    <span class="badge stack-badge">TypeScript</span>
-                    <span class="badge stack-badge">React</span>
-                    <span class="badge stack-badge">Vue</span>
-                    <span class="badge stack-badge">Bootstrap</span>
-                    <span class="badge stack-badge">Django</span>
-                    <span class="badge stack-badge">GraphQL</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-xl-4" data-reveal>
-              <article class="card surface-card stack-card border-0 h-100 stack-card-accent">
-                <div class="card-body p-4">
-                  <h3 data-i18n="stackPmTitle">Project Management / Scrum</h3>
-                  <div class="d-flex flex-wrap gap-2 mt-3">
-                    <span class="badge stack-badge">Scrum Ceremonies</span>
-                    <span class="badge stack-badge">Sprint Planning</span>
-                    <span class="badge stack-badge">Delivery Coordination</span>
-                    <span class="badge stack-badge">Stakeholder Reporting</span>
-                    <span class="badge stack-badge">Jira</span>
-                    <span class="badge stack-badge">Confluence</span>
-                    <span class="badge stack-badge">SAFe</span>
-                    <span class="badge stack-badge">CAPM</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-xl-4" data-reveal>
-              <article class="card surface-card stack-card border-0 h-100">
-                <div class="card-body p-4">
-                  <h3 data-i18n="stackQualityTitle">Calidad y entrega</h3>
-                  <div class="d-flex flex-wrap gap-2 mt-3">
-                    <span class="badge stack-badge">Jest</span>
-                    <span class="badge stack-badge">Cypress</span>
-                    <span class="badge stack-badge">Docker</span>
-                    <span class="badge stack-badge">GitHub</span>
-                    <span class="badge stack-badge">QA Validation</span>
-                    <span class="badge stack-badge">Structured Feedback</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-xl-6" data-reveal>
-              <article class="card surface-card stack-card border-0 h-100">
-                <div class="card-body p-4">
-                  <h3 data-i18n="stackTeamTitle">Trabajo con cliente y equipo</h3>
-                  <div class="d-flex flex-wrap gap-2 mt-3">
-                    <span class="badge stack-badge">Remote Collaboration</span>
-                    <span class="badge stack-badge">Client-Facing Communication</span>
-                    <span class="badge stack-badge">Documentation</span>
-                    <span class="badge stack-badge">Iteration Planning</span>
-                    <span class="badge stack-badge">Backlog Follow-up</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-xl-6" data-reveal>
-              <article class="card surface-card stack-card border-0 h-100">
-                <div class="card-body p-4">
-                  <h3 data-i18n="stackLanguagesTitle">Idiomas y certificaciones</h3>
-                  <div class="d-flex flex-wrap gap-2 mt-3">
-                    <span class="badge stack-badge" data-i18n="stackLanguage1">Español nativo</span>
-                    <span class="badge stack-badge" data-i18n="stackLanguage2">Inglés B2</span>
-                    <span class="badge stack-badge" data-i18n="stackLanguage3">Alemán A2</span>
-                    <span class="badge stack-badge" data-i18n="stackLanguage4">
-                      Japonés N5 en curso
-                    </span>
-                    <span class="badge stack-badge">SAFe 6 Scrum Master</span>
-                    <span class="badge stack-badge">CAPM</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell" id="contacto">
-        <div class="container-xxl">
-          <div class="section-heading" data-reveal>
-            <span class="eyebrow" data-i18n="contactEyebrow">Contacto</span>
-            <h2 data-i18n="contactTitle">Si quieres una página single-page, escríbeme.</h2>
-            <p class="section-copy mb-0" data-i18n="contactCopy">
-              Cuéntame si necesitas un portfolio, landing page de servicios o una mejora visual en
-              una página existente.
-            </p>
-          </div>
-
-          <div class="row g-4 mt-1">
-            <div class="col-lg-5" data-reveal>
-              <article class="card surface-card h-100 border-0">
-                <div class="card-body p-4 p-lg-5">
-                  <p class="mb-4" data-i18n="contactIntro">
-                    Trabajo con foco en claridad visual, contacto fácil y entregas simples de
-                    mantener. Si también necesitas orden de proyecto, puedo apoyar desde el ángulo
-                    técnico y de coordinación.
-                  </p>
-
-                  <div class="contact-links d-grid gap-3">
-                    <a class="contact-link" href="mailto:cesar.galvanmedrano@gmail.com">
-                      <i data-lucide="mail"></i>
-                      cesar.galvanmedrano@gmail.com
-                    </a>
-                    <a class="contact-link" href="tel:+525555094243">
-                      <i data-lucide="phone"></i>
-                      +52 55 5509 4243
-                    </a>
-                    <a
-                      id="contact-whatsapp-link"
-                      class="contact-link"
-                      href="https://wa.me/525555094243?text=Hola%20C%C3%A9sar%2C%20me%20interesa%20tu%20servicio%20de%20single-page%20website."
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i data-lucide="message-circle-more"></i>
-                      <span data-i18n="contactWhatsapp">WhatsApp directo</span>
-                    </a>
-                  </div>
-
-                  <button class="btn btn-portfolio-outline rounded-pill mt-4" id="copy-email-button" type="button">
-                    <i data-lucide="copy"></i>
-                    <span data-i18n="copyEmail">Copiar email</span>
-                  </button>
-                  <p class="helper-text mt-3 mb-0" id="copy-feedback" aria-live="polite"></p>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-lg-7" data-reveal>
-              <form class="card surface-card border-0 h-100" id="contact-form">
-                <div class="card-body p-4 p-lg-5">
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <label class="form-label" for="name" data-i18n="formNameLabel">Nombre</label>
-                      <input
-                        class="form-control form-control-lg"
-                        id="name"
-                        name="name"
-                        type="text"
-                        placeholder="Tu nombre"
-                        data-i18n-placeholder="formNamePlaceholder"
-                        required
-                      />
-                    </div>
-
-                    <div class="col-md-6">
-                      <label class="form-label" for="email" data-i18n="formEmailLabel">Correo</label>
-                      <input
-                        class="form-control form-control-lg"
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="tu@email.com"
-                        data-i18n-placeholder="formEmailPlaceholder"
-                        required
-                      />
-                    </div>
-
-                    <div class="col-12">
-                      <label class="form-label" for="project" data-i18n="formProjectLabel">
-                        Proyecto
-                      </label>
-                      <input
-                        class="form-control form-control-lg"
-                        id="project"
-                        name="project"
-                        type="text"
-                        placeholder="Landing page, portfolio, rediseño..."
-                        data-i18n-placeholder="formProjectPlaceholder"
-                        required
-                      />
-                    </div>
-
-                    <div class="col-12">
-                      <label class="form-label" for="message" data-i18n="formMessageLabel">
-                        Mensaje
-                      </label>
-                      <textarea
-                        class="form-control"
-                        id="message"
-                        name="message"
-                        rows="6"
-                        placeholder="Cuéntame el objetivo del sitio y el estilo que buscas."
-                        data-i18n-placeholder="formMessagePlaceholder"
-                        required
-                      ></textarea>
-                    </div>
-
-                    <div class="col-12 d-flex flex-wrap gap-3 align-items-center">
-                      <button class="btn btn-portfolio-primary btn-lg rounded-pill px-4" type="submit">
-                        <i data-lucide="mail-plus"></i>
-                        <span data-i18n="formSubmit">Abrir mensaje por correo</span>
-                      </button>
-                      <p class="helper-text mb-0" id="form-feedback" aria-live="polite"></p>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container-xxl d-flex flex-column flex-md-row justify-content-between gap-3">
-        <p class="mb-0" data-i18n="footerCopy">Portfolio de César Adrián Galván Medrano.</p>
-        <p class="mb-0" id="footer-year"></p>
+      <hr class="hero-divider" />
+      <p class="hero-card-label" data-i18n="hero.cert.label">Certificaciones</p>
+      <div class="cert-chips">
+        <span class="chip active">SAFe 6 SM</span>
+        <span class="chip">CAPM · PMI</span>
+        <span class="chip">Agile</span>
+        <span class="chip">Full-Stack Dev</span>
       </div>
-    </footer>
+      <hr class="hero-divider" />
+      <p class="hero-card-label" data-i18n="hero.loc.label">Ubicación</p>
+      <p style="font-size:0.88rem;color:var(--muted);display:flex;align-items:center;gap:0.5rem;">
+        <i data-lucide="map-pin" style="width:14px;height:14px;color:var(--accent);"></i>
+        Mexico City, Mexico
+      </p>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="./script.js"></script>
-  </body>
+<!-- ══════════════════════════════════════════
+    EXPERIENCE
+══════════════════════════════════════════ -->
+  <section id="experience">
+    <div class="section-eyebrow" data-i18n="exp.eyebrow">Experiencia Laboral</div>
+    <h2 class="section-title" data-i18n="exp.title">Trayectoria Profesional</h2>
+
+    <div class="exp-timeline">
+
+      <!-- Job 1 — Revelo -->
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <span class="exp-role" data-i18n="job1.role">Entrenador de LLM</span>
+            <span class="exp-period" data-i18n="job1.period">Feb 2027 – Presente</span>
+          </div>
+          <div class="exp-company">
+            <i data-lucide="building-2" style="width:12px;height:12px;"></i>
+            <span data-i18n="job1.company">Revelo · Remoto · Freelance</span>
+          </div>
+          <p class="exp-desc" data-i18n="job1.desc">Proyectos de entrenamiento y evaluación de IA enfocados en
+            generación de apps full-stack y desarrollo front-end de una sola página.</p>
+          <ul class="exp-bullets">
+            <li data-i18n="job1.b1">Reelaboré y puliría aplicaciones de una página generadas por IA en HTML, CSS y
+              JavaScript para cumplir referencias de UI y entregar resultados responsivos y listos para producción.</li>
+            <li data-i18n="job1.b2">Aseguré que los entregables soportaran escritorio y móvil, modo claro/oscuro e
+              interacciones completas para el usuario.</li>
+            <li data-i18n="job1.b3">Diseñé prompts multi-paso realistas y solicitudes de seguimiento para evaluar apps
+              generadas por IA en escenarios de entrega estructurada.</li>
+            <li data-i18n="job1.b4">Validé la preparación de aplicaciones mediante verificación de compilación, tiempo
+              de ejecución, responsividad y funcionalidades, incluyendo verificación con Docker.</li>
+            <li data-i18n="job1.b5">Produje evaluaciones estructuradas y materiales de entrega final que soportan
+              consistencia y trazabilidad en flujos de trabajo de entrenamiento de IA.</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="tool-tag">Prompt Design</span><span class="tool-tag">QA Validation</span><span
+              class="tool-tag">Docker</span><span class="tool-tag">HTML/CSS/JS</span><span
+              class="tool-tag">Agile/Scrum</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job 2 — Turing -->
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <span class="exp-role" data-i18n="job2.role">Entrenador de LLM</span>
+            <span class="exp-period" data-i18n="job2.period">Sep 2025 – Ene 2026</span>
+          </div>
+          <div class="exp-company">
+            <i data-lucide="building-2" style="width:12px;height:12px;"></i>
+            <span data-i18n="job2.company">Turing · Remoto · Freelance · Cliente: Apple</span>
+          </div>
+          <p class="exp-desc" data-i18n="job2.desc">Iniciativas de entrenamiento de IA multilingüe — diseño de
+            escenarios estructurados y evaluación de salidas de modelos.</p>
+          <ul class="exp-bullets">
+            <li data-i18n="job2.b1">Diseñé flujos de trabajo multi-turno complejos y marcos de evaluación con atención a
+              precisión, calidad y consistencia.</li>
+            <li data-i18n="job2.b2">Realicé revisiones estructuradas, identifiqué brechas y documenté retroalimentación
+              correctiva para la mejora continua.</li>
+            <li data-i18n="job2.b3">Colaboré con equipos interfuncionales para mejorar estándares de entrenamiento,
+              calidad de anotaciones y consistencia de entrega.</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="tool-tag">Prompt Design</span><span class="tool-tag">Evaluation Frameworks</span><span
+              class="tool-tag">Quality Review</span><span class="tool-tag">Agile/Scrum</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job 3 — IFT -->
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <span class="exp-role" data-i18n="job3.role">Project Manager Asociado / Scrum Master</span>
+            <span class="exp-period" data-i18n="job3.period">Jun 2024 – Sep 2025</span>
+          </div>
+          <div class="exp-company">
+            <i data-lucide="building-2" style="width:12px;height:12px;"></i>
+            <span data-i18n="job3.company">Instituto Federal de Telecomunicaciones (IFT) · Ciudad de México
+              (Remoto)</span>
+          </div>
+          <p class="exp-desc" data-i18n="job3.desc">Colaboré con stakeholders internos y externos para estructurar la
+            entrega del proyecto utilizando prácticas predictivas y ágiles.</p>
+          <ul class="exp-bullets">
+            <li data-i18n="job3.b1">Definí e introduje la estructura operativa ágil del proyecto, alineando ceremonias,
+              flujos de trabajo y prácticas de entrega con las expectativas del cliente.</li>
+            <li data-i18n="job3.b2">Creé y mantuve la documentación del proyecto para mantener alineados a stakeholders,
+              desarrolladores y entregables.</li>
+            <li data-i18n="job3.b3">Propuse y configuré flujos de trabajo basados en Jira para rastrear actividades de
+              sprint, incidentes, dependencias y el progreso general.</li>
+            <li data-i18n="job3.b4">Preparé informes de avance recurrentes y ad hoc para liderazgo interno y
+              stakeholders del cliente.</li>
+            <li data-i18n="job3.b5">Apoyé la coordinación entre líderes técnicos, configuradores y desarrolladores para
+              sacar a la luz bloqueadores y mantener el ritmo de ejecución.</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="tool-tag">Scrum</span><span class="tool-tag">SAFe</span><span class="tool-tag">Jira</span><span
+              class="tool-tag">Confluence</span><span class="tool-tag">GitHub</span><span class="tool-tag">MS
+              Project</span><span class="tool-tag">SharePoint</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job 4 — Luxoft -->
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <span class="exp-role" data-i18n="job4.role">Ingeniero de Software (Full-Stack)</span>
+            <span class="exp-period" data-i18n="job4.period">May 2022 – Abr 2024</span>
+          </div>
+          <div class="exp-company">
+            <i data-lucide="building-2" style="width:12px;height:12px;"></i>
+            <span data-i18n="job4.company">Luxoft · Guadalajara, México (Remoto) · Cliente: Expedia Group</span>
+          </div>
+          <p class="exp-desc" data-i18n="job4.desc">Contribuí a un equipo de producto desarrollando y soportando
+            experiencias de usuario relacionadas con vuelos en un entorno SAFe Ágil.</p>
+          <ul class="exp-bullets">
+            <li data-i18n="job4.b1">Construí y mantuve componentes de UI para la página de vuelos usando React,
+              TypeScript y JavaScript.</li>
+            <li data-i18n="job4.b2">Apoyé prácticas de calidad mediante pruebas unitarias y de componentes con Jest y
+              Cypress.</li>
+            <li data-i18n="job4.b3">Colaboré en un esquema SAFe Ágil, apoyando la entrega del equipo, sesiones de
+              refinamiento y mejoras continuas del producto.</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="tool-tag">React</span><span class="tool-tag">TypeScript</span><span
+              class="tool-tag">JavaScript</span><span class="tool-tag">GraphQL</span><span
+              class="tool-tag">Jest</span><span class="tool-tag">Cypress</span><span class="tool-tag">SAFe Agile</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job 5 — Nerdy Trust -->
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <span class="exp-role" data-i18n="job5.role">Desarrollador Web</span>
+            <span class="exp-period" data-i18n="job5.period">Jul 2018 – May 2022</span>
+          </div>
+          <div class="exp-company">
+            <i data-lucide="building-2" style="width:12px;height:12px;"></i>
+            <span data-i18n="job5.company">Nerdy Trust · Ciudad de México · Clientes: BAMF, enDrive, Turbodega, Ubuken,
+              TED, NAFIN</span>
+          </div>
+          <p class="exp-desc" data-i18n="job5.desc">Diseñé y entregué landing pages y sitios web para múltiples
+            clientes, equilibrando usabilidad, funcionalidad y requisitos del cliente.</p>
+          <ul class="exp-bullets">
+            <li data-i18n="job5.b1">Gestioné cambios solicitados y mejoras iterativas en proyectos para diferentes
+              stakeholders.</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="tool-tag">React</span><span class="tool-tag">React Native</span><span
+              class="tool-tag">Vue.js</span><span class="tool-tag">Django</span><span class="tool-tag">SCSS</span><span
+              class="tool-tag">Bootstrap</span><span class="tool-tag">Scrum</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job 6 — CODES -->
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <span class="exp-role" data-i18n="job6.role">Desarrollador Interno</span>
+            <span class="exp-period" data-i18n="job6.period">Feb – Ago 2017</span>
+          </div>
+          <div class="exp-company">
+            <i data-lucide="building-2" style="width:12px;height:12px;"></i>
+            <span data-i18n="job6.company">CODES, Consultoría y Desarrollo de Sistemas · Ciudad de México</span>
+          </div>
+          <p class="exp-desc" data-i18n="job6.desc">Apoyé actividades de desarrollo front-end y back-end para la app
+            YAAX.</p>
+          <ul class="exp-bullets">
+            <li data-i18n="job6.b1">Creé páginas web e implementé cambios de back-end solicitados.</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="tool-tag">HTML</span><span class="tool-tag">CSS</span><span
+              class="tool-tag">Bootstrap</span><span class="tool-tag">Java</span><span
+              class="tool-tag">GitHub</span><span class="tool-tag">GitLab</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- ══════════════════════════════════════════
+    SKILLS
+══════════════════════════════════════════ -->
+  <section id="skills">
+    <div class="inner">
+      <div class="section-eyebrow" data-i18n="skills.eyebrow">Capacidades</div>
+      <h2 class="section-title" data-i18n="skills.title">Habilidades y Herramientas</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-icon"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
+          <div class="skill-card-title" data-i18n="skill1.title">Ágil y Gestión de Proyectos</div>
+          <div class="skill-list">
+            <span class="skill-pill">Scrum</span><span class="skill-pill">SAFe</span><span class="skill-pill">Sprint
+              Planning</span><span class="skill-pill">Delivery Coordination</span><span class="skill-pill">Stakeholder
+              Reporting</span><span class="skill-pill">Jira</span><span class="skill-pill">Confluence</span><span
+              class="skill-pill">MS Project</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon"><i data-lucide="code-2" style="width:20px;height:20px;"></i></div>
+          <div class="skill-card-title" data-i18n="skill2.title">Desarrollo Frontend</div>
+          <div class="skill-list">
+            <span class="skill-pill">React</span><span class="skill-pill">TypeScript</span><span
+              class="skill-pill">JavaScript</span><span class="skill-pill">HTML</span><span class="skill-pill">CSS /
+              SCSS</span><span class="skill-pill">Bootstrap</span><span class="skill-pill">Vue.js</span><span
+              class="skill-pill">React Native</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon"><i data-lucide="test-tube" style="width:20px;height:20px;"></i></div>
+          <div class="skill-card-title" data-i18n="skill3.title">Pruebas y QA</div>
+          <div class="skill-list">
+            <span class="skill-pill">Jest</span><span class="skill-pill">Cypress</span><span class="skill-pill">QA
+              Validation</span><span class="skill-pill">Docker</span><span class="skill-pill">Structured
+              Evaluations</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon"><i data-lucide="brain" style="width:20px;height:20px;"></i></div>
+          <div class="skill-card-title" data-i18n="skill4.title">IA y Entrenamiento de LLM</div>
+          <div class="skill-list">
+            <span class="skill-pill">Prompt Design</span><span class="skill-pill">Evaluation Frameworks</span><span
+              class="skill-pill">Structured Feedback</span><span class="skill-pill">Annotation Quality</span><span
+              class="skill-pill">Iterative Improvement</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon"><i data-lucide="server" style="width:20px;height:20px;"></i></div>
+          <div class="skill-card-title" data-i18n="skill5.title">Backend y DevOps</div>
+          <div class="skill-list">
+            <span class="skill-pill">Django / Python</span><span class="skill-pill">Java</span><span
+              class="skill-pill">GraphQL</span><span class="skill-pill">GitHub</span><span
+              class="skill-pill">Bitbucket</span><span class="skill-pill">GitLab</span><span
+              class="skill-pill">Docker</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon"><i data-lucide="users" style="width:20px;height:20px;"></i></div>
+          <div class="skill-card-title" data-i18n="skill6.title">Colaboración y Documentación</div>
+          <div class="skill-list">
+            <span class="skill-pill">SharePoint</span><span class="skill-pill">Confluence</span><span
+              class="skill-pill">Microsoft Office</span><span class="skill-pill">Cross-functional Teams</span><span
+              class="skill-pill">Remote Work</span><span class="skill-pill">Mantis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ══════════════════════════════════════════
+    SERVICES
+══════════════════════════════════════════ -->
+  <div id="services">
+    <div class="inner">
+      <div class="section-eyebrow" data-i18n="svc.eyebrow">Servicios</div>
+      <h2 class="section-title" data-i18n="svc.title">Lo que Ofrezco</h2>
+      <p class="services-intro" data-i18n="svc.intro">
+        Además de mi experiencia en gestión de proyectos ágiles, ofrezco servicios de desarrollo web freelance
+        especializados en páginas únicas modernas y mejoras de diseño para sitios existentes.
+      </p>
+      <div class="services-grid">
+
+        <!-- Service 1: SPA -->
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="layout-template" style="width:22px;height:22px;"></i></div>
+          <div class="service-title" data-i18n="svc1.title">Single-Page Applications</div>
+          <p class="service-desc" data-i18n="svc1.desc">
+            Desarrollo páginas web de una sola vista completamente responsivas, rápidas y listas para producción. Desde
+            landing pages hasta portfolios, me encargo del diseño y la implementación de principio a fin.
+          </p>
+          <ul class="service-includes">
+            <li data-i18n="svc1.i1">Diseño adaptable (mobile-first)</li>
+            <li data-i18n="svc1.i2">Modo oscuro / claro integrado</li>
+            <li data-i18n="svc1.i3">HTML, CSS, JS vanilla o React</li>
+            <li data-i18n="svc1.i4">Soporte para múltiples idiomas</li>
+            <li data-i18n="svc1.i5">Animaciones y microinteracciones</li>
+          </ul>
+        </div>
+
+        <!-- Service 2: Design improvement -->
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="palette" style="width:22px;height:22px;"></i></div>
+          <div class="service-title" data-i18n="svc2.title">Mejora de Diseño</div>
+          <p class="service-desc" data-i18n="svc2.desc">
+            ¿Tu sitio se ve desactualizado o no convierte? Analizo tu página actual y aplico mejoras de UI/UX concretas:
+            tipografía, paleta de colores, espaciado, jerarquía visual y experiencia de usuario.
+          </p>
+          <ul class="service-includes">
+            <li data-i18n="svc2.i1">Auditoría visual y de usabilidad</li>
+            <li data-i18n="svc2.i2">Rediseño de componentes clave</li>
+            <li data-i18n="svc2.i3">Optimización de paleta y tipografía</li>
+            <li data-i18n="svc2.i4">Mejora de jerarquía y estructura</li>
+            <li data-i18n="svc2.i5">Entrega con documentación de cambios</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- CTA Banner -->
+      <div class="services-cta">
+        <div class="services-cta-text">
+          <div class="cta-heading" data-i18n="svc.cta.heading">¿Tienes un proyecto en mente?</div>
+          <p class="cta-sub" data-i18n="svc.cta.sub">Hablemos sobre lo que necesitas construir o mejorar.</p>
+        </div>
+        <a href="mailto:cesar.galvanmedrano@gmail.com" class="btn-primary-custom">
+          <i data-lucide="mail" style="width:14px;height:14px;"></i>
+          <span data-i18n="svc.cta.btn">Contáctame</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<!-- ══════════════════════════════════════════
+    EDUCATION
+══════════════════════════════════════════ -->
+  <section id="education">
+    <div class="section-eyebrow" data-i18n="edu.eyebrow">Educación</div>
+    <h2 class="section-title" data-i18n="edu.title">Formación Académica</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <i class="fas fa-graduation-cap edu-icon"></i>
+        <div class="edu-year">2021</div>
+        <div class="edu-degree" data-i18n="edu1.degree">Ing. en Sistemas Computacionales (ISC)</div>
+        <div class="edu-inst" data-i18n="edu1.inst">Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)
+        </div>
+      </div>
+      <div class="edu-card">
+        <i class="fas fa-language edu-icon"></i>
+        <div class="edu-year">Ene – Jun 2019</div>
+        <div class="edu-degree" data-i18n="edu2.degree">Programa de Idioma Alemán</div>
+        <div class="edu-inst">
+          <span data-i18n="edu2.inst">Goethe-Institut · Freiburg im Breisgau, Alemania</span><br>
+          <small style="color:var(--muted);font-size:0.78rem;" data-i18n="edu2.note">Inmersión total; habilidades de
+            comunicación intercultural mejoradas.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ══════════════════════════════════════════
+    CERTIFICATIONS
+══════════════════════════════════════════ -->
+  <section id="certifications">
+    <div class="section-eyebrow" data-i18n="cert.eyebrow">Certificaciones</div>
+    <h2 class="section-title" data-i18n="cert.title">Licencias y Credenciales</h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-badge"><i class="fas fa-certificate"></i></div>
+        <div>
+          <div class="cert-name" data-i18n="cert1.name">SAFe 6 Scrum Master</div>
+          <div class="cert-issuer" data-i18n="cert1.issuer">Scaled Agile Inc. · May 2024 – May 2025</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge"><i class="fas fa-award"></i></div>
+        <div>
+          <div class="cert-name" data-i18n="cert2.name">Certified Associate in Project Management (CAPM)</div>
+          <div class="cert-issuer" data-i18n="cert2.issuer">Project Management Institute (PMI) · Jun 2021 – Jun 2024
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ══════════════════════════════════════════
+    LANGUAGES
+══════════════════════════════════════════ -->
+  <section id="languages" style="padding-top:0;">
+    <div class="section-eyebrow" data-i18n="lang.eyebrow">Idiomas</div>
+    <h2 class="section-title" data-i18n="lang.title">Comunicación</h2>
+    <div class="lang-grid">
+      <div class="lang-card">
+        <div class="lang-name" data-i18n="lang1.name">Español</div>
+        <div class="lang-level" data-i18n="lang1.level">Nativo</div>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name" data-i18n="lang2.name">Inglés</div>
+        <div class="lang-level" data-i18n="lang2.level">Intermedio Alto (B2)</div>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot"></div>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name" data-i18n="lang3.name">Alemán</div>
+        <div class="lang-level" data-i18n="lang3.level">Elemental (A2)</div>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot"></div>
+          <div class="lang-dot"></div>
+          <div class="lang-dot"></div>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name" data-i18n="lang4.name">Japonés</div>
+        <div class="lang-level" data-i18n="lang4.level">Aprendiendo (N5)</div>
+        <div class="lang-dots">
+          <div class="lang-dot half"></div>
+          <div class="lang-dot"></div>
+          <div class="lang-dot"></div>
+          <div class="lang-dot"></div>
+          <div class="lang-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ══════════════════════════════════════════
+    CONTACT
+══════════════════════════════════════════ -->
+  <div id="contact">
+    <div class="inner">
+      <div>
+        <div class="section-eyebrow" data-i18n="contact.eyebrow">Contacto</div>
+        <h2 class="section-title" data-i18n="contact.title">Trabajemos Juntos</h2>
+        <p class="contact-sub" data-i18n="contact.sub">Abierto a roles de Scrum Master, Agile Project Manager y Delivery
+          Coordinator. ¡No dudes en escribirme!</p>
+        <div class="contact-social">
+          <a href="mailto:cesar.galvanmedrano@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank" title="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div>
+        <ul class="contact-info-list">
+          <li>
+            <span class="icon-wrap"><i data-lucide="mail" style="width:16px;height:16px;"></i></span>
+            <a href="mailto:cesar.galvanmedrano@gmail.com">cesar.galvanmedrano@gmail.com</a>
+          </li>
+          <li>
+            <span class="icon-wrap"><i data-lucide="phone" style="width:16px;height:16px;"></i></span>
+            +52 55 5509 4243
+          </li>
+          <li>
+            <span class="icon-wrap"><i data-lucide="map-pin" style="width:16px;height:16px;"></i></span>
+            Mexico City, Mexico
+          </li>
+          <li>
+            <span class="icon-wrap"><i class="fab fa-linkedin-in" style="font-size:0.85rem;"></i></span>
+            <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank"
+              data-i18n="contact.linkedin">Perfil de LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<!-- ══════════════════════════════════════════
+    FOOTER
+══════════════════════════════════════════ -->
+  <footer>
+    <p data-i18n="footer.text">© 2026 César Adrián Galván Medrano</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.395.0/dist/umd/lucide.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

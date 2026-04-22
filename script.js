@@ -1,642 +1,352 @@
-const EMAIL_ADDRESS = "cesar.galvanmedrano@gmail.com";
-const WHATSAPP_NUMBER = "525555094243";
-const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
-const THEME_STORAGE_KEY = "portfolio-theme";
-const LANGUAGE_STORAGE_KEY = "portfolio-language";
-
-const TRANSLATIONS = {
+/* ══════════════════════════════════════════
+  TRANSLATIONS
+══════════════════════════════════════════ */
+const i18n = {
   es: {
-    metaTitle: "César Adrián Galván Medrano | Portfolio",
-    metaDescription:
-      "Portfolio de César Adrián Galván Medrano. Desarrollo páginas web single-page, front-end polish y coordinación ágil con tarifa de $30 USD por hora.",
-    switchToEnglish: "Switch to English",
-    switchToSpanish: "Cambiar a español",
-    themeSwitchToLight: "Cambiar a modo claro",
-    themeSwitchToDark: "Cambiar a modo oscuro",
-    navHome: "Inicio",
-    navProfile: "Perfil",
-    navServices: "Servicios",
-    navExperience: "Experiencia",
-    navStack: "Stack",
-    navContact: "Contacto",
-    heroEyebrow: "Sitios single-page · Project Management · entrega Scrum",
-    heroTitle: "Desarrollo páginas single-page con diseño minimalista y enfoque en entrega.",
-    heroDescription:
-      "Soy César Adrián Galván Medrano, ingeniero de software con experiencia en desarrollo front-end, Project Management y Scrum Master. Combino diseño limpio, ejecución técnica y seguimiento ágil para construir sitios web claros, rápidos y listos para convertir.",
-    heroPrimaryCta: "Solicitar una página",
-    heroWhatsappCta: "WhatsApp",
-    heroRate: "$30 USD por hora",
-    heroModes: "Modo claro + modo oscuro",
-    heroLocation: "Ciudad de México · Remoto",
-    helpLabel: "En qué te ayudo",
-    helpTitle: "Presencia web clara, rápida y profesional.",
-    helpItem1: "Landing pages y portfolios de una sola página",
-    helpItem2: "Mejora visual y pulido front-end",
-    helpItem3: "Gestión de entregables con disciplina ágil",
-    directContactLabel: "Contacto directo",
-    extraValueLabel: "También aporto",
-    extraBadgePm: "Project Manager",
-    extraBadgeScrum: "Scrum Master",
-    extraBadgeReporting: "Stakeholder Reporting",
-    extraBadgeJira: "Jira & Confluence",
-    profileEyebrow: "Perfil",
-    profileTitle: "Desarrollo web con mentalidad de delivery.",
-    profileCopy:
-      "Mi experiencia mezcla construcción de interfaces, sitios para clientes, QA de aplicaciones y coordinación de trabajo con equipos técnicos y stakeholders.",
-    profileParagraph1:
-      "He trabajado en desarrollo front-end con React, TypeScript, JavaScript, HTML, CSS, SCSS y Vue, además de pruebas con Jest y Cypress. También he entregado landing pages y websites para múltiples clientes en entornos de trabajo ágiles.",
-    profileParagraph2:
-      "Como Associate Project Manager y Scrum Master estructuré ceremonias, flujos en Jira, seguimiento de avances y reportes a stakeholders. Esa combinación hace que no sólo diseñe la página, sino que la lleve con orden, claridad y buen ritmo de entrega.",
-    profileMetricYears: "Años participando en proyectos web y de software",
-    profileMetricPm: "Experiencia en Project Management, Scrum y seguimiento de entregables",
-    profileMetricLanguage: "Inglés para colaborar con clientes y equipos internacionales",
-    servicesEyebrow: "Servicios",
-    servicesTitle: "Servicios enfocados en páginas web single-page.",
-    servicesCopy:
-      "Trabajo en proyectos pequeños, iteraciones puntuales o una landing completa con una estructura simple y orientada a contacto.",
-    service1Title: "Landing pages y portfolios",
-    service1Copy:
-      "Páginas de una sola pantalla con jerarquía visual clara, contenido ordenado y llamados a la acción visibles.",
-    service2Title: "Responsive y dark/light mode",
-    service2Copy:
-      "Ajusto layout, tipografía, espaciado y comportamiento entre desktop, tablet y mobile, incluyendo temas claro y oscuro.",
-    service3Title: "Contacto y conversión",
-    service3Copy:
-      "Integro WhatsApp, correo, teléfono y formularios simples para que la página te ayude a recibir mensajes, no sólo a verse bien.",
-    service4Title: "Iteraciones con orden ágil",
-    service4Copy:
-      "Si el proyecto lo necesita, también puedo manejar seguimiento, prioridades y entregables con enfoque de Project Manager / Scrum Master.",
-    pricingLabel: "Tarifa",
-    pricingTitle: "$30 USD por hora",
-    pricingCopy:
-      "Modelo de cobro transparente para mejoras puntuales, refinamiento visual o una página single-page completa lista para publicación.",
-    pricingCheck1: "HTML, CSS, JavaScript y Bootstrap listos para publicar",
-    pricingCheck2: "Estructura enfocada en claridad, servicio y contacto",
-    pricingCheck3: "Publicación preparada para hosting gratis",
-    experienceEyebrow: "Experiencia",
-    experienceTitle: "Desarrollo, Project Management y Scrum en proyectos reales.",
-    experienceCopy:
-      "Además de desarrollo web, también tengo experiencia formal coordinando trabajo, documentación, seguimiento y comunicación con stakeholders.",
-    experienceHighlightLabel: "Project Manager / Scrum Master",
-    experienceHighlightTitle: "Instituto Federal de Telecomunicaciones",
-    experienceHighlightItem1: "Definí ceremonias ágiles, estructura operativa y ritmo de entrega",
-    experienceHighlightItem2:
-      "Preparé documentación, seguimiento y reportes para liderazgo y cliente",
-    experienceHighlightItem3: "Di seguimiento a incidentes, dependencias y progreso con Jira",
-    timeline1Date: "Jun 2024 · Sep 2025",
-    timeline1Title: "Associate Project Manager / Scrum Master · IFT",
-    timeline1Copy:
-      "Coordiné stakeholders internos y externos, configuré flujos en Jira, mantuve documentación y reporté estatus de entrega para una iniciativa tecnológica del sector público.",
-    timeline2Date: "Trabajo freelance actual",
-    timeline2Title: "LLM Trainer · Front-end QA · Single-page apps",
-    timeline2Copy:
-      "Refiné aplicaciones generadas en HTML, CSS y JavaScript, validando calidad visual, responsividad, funcionalidad y consistencia antes de entrega final.",
-    timeline3Date: "May 2022 · Apr 2024",
-    timeline3Title: "Software Engineer (Full-Stack) · Luxoft para Expedia Group",
-    timeline3Copy:
-      "Desarrollé y mantuve componentes de interfaz para experiencias de vuelos usando React, TypeScript y JavaScript, con soporte de testing en Jest y Cypress.",
-    timeline4Date: "Jul 2018 · May 2022",
-    timeline4Title: "Web Developer · Nerdy Trust",
-    timeline4Copy:
-      "Diseñé y entregué landing pages y sitios web para clientes como BAMF, enDrive, Turbodega, Ubuken, TED y NAFIN, atendiendo cambios y mejoras iterativas.",
-    stackEyebrow: "Stack",
-    stackTitle: "Tecnología, QA y gestión ágil destacadas.",
-    stackCopy:
-      "No sólo trabajo la parte visual del sitio: también entiendo delivery, seguimiento, calidad y comunicación de proyecto.",
-    stackFrontendTitle: "Front-end y desarrollo",
-    stackPmTitle: "Project Management / Scrum",
-    stackQualityTitle: "Calidad y entrega",
-    stackTeamTitle: "Trabajo con cliente y equipo",
-    stackLanguagesTitle: "Idiomas y certificaciones",
-    stackLanguage1: "Español nativo",
-    stackLanguage2: "Inglés B2",
-    stackLanguage3: "Alemán A2",
-    stackLanguage4: "Japonés N5 en curso",
-    contactEyebrow: "Contacto",
-    contactTitle: "Si quieres una página single-page, escríbeme.",
-    contactCopy:
-      "Cuéntame si necesitas un portfolio, landing page de servicios o una mejora visual en una página existente.",
-    contactIntro:
-      "Trabajo con foco en claridad visual, contacto fácil y entregas simples de mantener. Si también necesitas orden de proyecto, puedo apoyar desde el ángulo técnico y de coordinación.",
-    contactWhatsapp: "WhatsApp directo",
-    copyEmail: "Copiar email",
-    formNameLabel: "Nombre",
-    formNamePlaceholder: "Tu nombre",
-    formEmailLabel: "Correo",
-    formEmailPlaceholder: "tu@email.com",
-    formProjectLabel: "Proyecto",
-    formProjectPlaceholder: "Landing page, portfolio, rediseño...",
-    formMessageLabel: "Mensaje",
-    formMessagePlaceholder: "Cuéntame el objetivo del sitio y el estilo que buscas.",
-    formSubmit: "Abrir mensaje por correo",
-    footerCopy: "Portfolio single-page de César Adrián Galván Medrano.",
-    footerAvailability: "© {year} · Disponible para proyectos web single-page.",
-    copySuccess: "Email copiado al portapapeles.",
-    copyFailure: "No pude copiarlo automáticamente, pero el correo está visible arriba.",
-    formFeedback: "Abrí tu cliente de correo con el mensaje precargado.",
-    mailtoSubjectPrefix: "Consulta web",
-    heroWhatsappMessage: "Hola César, quiero cotizar una página single-page.",
-    contactWhatsappMessage: "Hola César, me interesa tu servicio de single-page website.",
+    /* NAV */
+    'nav.experience':     'Experiencia',
+    'nav.skills':         'Habilidades',
+    'nav.services':       'Servicios',
+    'nav.education':      'Educación',
+    'nav.certifications': 'Certificaciones',
+    'nav.contact':        'Contacto',
+    'nav.lang-btn':       'EN',
+    /* HERO */
+    'hero.tag':           'Scrum Master & Project Manager',
+    'hero.summary':       'Scrum Master certificado SAFe y Project Manager Asociado con experiencia en coordinación de iniciativas tecnológicas, facilitación de ceremonias ágiles y comunicación clara con stakeholders en entornos remotos y con clientes.',
+    'hero.cta.contact':   'Contáctame',
+    'hero.cta.linkedin':  'LinkedIn',
+    'hero.card.label':    'Resumen Rápido',
+    'hero.stat.years':    'Años de Experiencia',
+    'hero.stat.clients':  'Clientes Atendidos',
+    'hero.stat.langs':    'Idiomas',
+    'hero.cert.label':    'Certificaciones',
+    'hero.loc.label':     'Ubicación',
+    /* EXPERIENCE */
+    'exp.eyebrow':        'Experiencia Laboral',
+    'exp.title':          'Trayectoria Profesional',
+    'job1.role':          'Entrenador de LLM',
+    'job1.company':       'Revelo · Remoto · Freelance',
+    'job1.period':        'Feb 2027 – Presente',
+    'job1.desc':          'Proyectos de entrenamiento y evaluación de IA enfocados en generación de apps full-stack y desarrollo front-end de una sola página, con especial atención a estándares de calidad y retroalimentación estructurada.',
+    'job1.b1':            'Reelaboré y puliría aplicaciones de una página generadas por IA en HTML, CSS y JavaScript para cumplir referencias de UI y entregar resultados responsivos y listos para producción.',
+    'job1.b2':            'Aseguré que los entregables soportaran escritorio y móvil, modo claro/oscuro e interacciones completas para el usuario.',
+    'job1.b3':            'Diseñé prompts multi-paso realistas y solicitudes de seguimiento para evaluar apps generadas por IA en escenarios de entrega estructurada.',
+    'job1.b4':            'Validé la preparación de aplicaciones mediante verificación de compilación, tiempo de ejecución, responsividad y funcionalidades, incluyendo verificación con Docker.',
+    'job1.b5':            'Produje evaluaciones estructuradas y materiales de entrega final que soportan consistencia y trazabilidad en flujos de trabajo de entrenamiento de IA.',
+    'job2.role':          'Entrenador de LLM',
+    'job2.company':       'Turing · Remoto · Freelance · Cliente: Apple',
+    'job2.period':        'Sep 2025 – Ene 2026',
+    'job2.desc':          'Iniciativas de entrenamiento de IA multilingüe — diseño de escenarios estructurados y evaluación de salidas de modelos, fortaleciendo el pensamiento analítico y la disciplina de procesos.',
+    'job2.b1':            'Diseñé flujos de trabajo multi-turno complejos y marcos de evaluación con atención a precisión, calidad y consistencia.',
+    'job2.b2':            'Realicé revisiones estructuradas, identifiqué brechas y documenté retroalimentación correctiva para la mejora continua.',
+    'job2.b3':            'Colaboré con equipos interfuncionales para mejorar estándares de entrenamiento, calidad de anotaciones y consistencia de entrega.',
+    'job3.role':          'Project Manager Asociado / Scrum Master',
+    'job3.company':       'Instituto Federal de Telecomunicaciones (IFT) · Ciudad de México (Remoto)',
+    'job3.period':        'Jun 2024 – Sep 2025',
+    'job3.desc':          'Colaboré con stakeholders internos y externos para estructurar la entrega del proyecto utilizando prácticas predictivas y ágiles para una iniciativa tecnológica del sector público.',
+    'job3.b1':            'Definí e introduje la estructura operativa ágil del proyecto, alineando ceremonias, flujos de trabajo y prácticas de entrega con las expectativas del cliente.',
+    'job3.b2':            'Creé y mantuve la documentación del proyecto para mantener alineados a stakeholders, desarrolladores y entregables durante toda la ejecución.',
+    'job3.b3':            'Propuse y configuré flujos de trabajo basados en Jira para rastrear actividades de sprint, incidentes, dependencias y el progreso general.',
+    'job3.b4':            'Preparé informes de avance recurrentes y ad hoc para liderazgo interno y stakeholders del cliente.',
+    'job3.b5':            'Apoyé la coordinación entre líderes técnicos, configuradores y desarrolladores para sacar a la luz bloqueadores y mantener el ritmo de ejecución.',
+    'job4.role':          'Ingeniero de Software (Full-Stack)',
+    'job4.company':       'Luxoft · Guadalajara, México (Remoto) · Cliente: Expedia Group',
+    'job4.period':        'May 2022 – Abr 2024',
+    'job4.desc':          'Contribuí a un equipo de producto desarrollando y soportando experiencias de usuario relacionadas con vuelos en un entorno SAFe Ágil.',
+    'job4.b1':            'Construí y mantuve componentes de UI para la página de vuelos usando React, TypeScript y JavaScript.',
+    'job4.b2':            'Apoyé prácticas de calidad mediante pruebas unitarias y de componentes con Jest y Cypress.',
+    'job4.b3':            'Colaboré en un esquema SAFe Ágil, apoyando la entrega del equipo, sesiones de refinamiento y mejoras continuas del producto.',
+    'job5.role':          'Desarrollador Web',
+    'job5.company':       'Nerdy Trust · Ciudad de México · Clientes: BAMF, enDrive, Turbodega, Ubuken, TED, NAFIN',
+    'job5.period':        'Jul 2018 – May 2022',
+    'job5.desc':          'Diseñé y entregué landing pages y sitios web para múltiples clientes, equilibrando usabilidad, funcionalidad y requisitos del cliente.',
+    'job5.b1':            'Gestioné cambios solicitados y mejoras iterativas en proyectos para diferentes stakeholders.',
+    'job6.role':          'Desarrollador Interno',
+    'job6.company':       'CODES, Consultoría y Desarrollo de Sistemas · Ciudad de México',
+    'job6.period':        'Feb – Ago 2017',
+    'job6.desc':          'Apoyé actividades de desarrollo front-end y back-end para la app YAAX.',
+    'job6.b1':            'Creé páginas web e implementé cambios de back-end solicitados.',
+    /* SKILLS */
+    'skills.eyebrow':     'Capacidades',
+    'skills.title':       'Habilidades y Herramientas',
+    'skill1.title':       'Ágil y Gestión de Proyectos',
+    'skill2.title':       'Desarrollo Frontend',
+    'skill3.title':       'Pruebas y QA',
+    'skill4.title':       'IA y Entrenamiento de LLM',
+    'skill5.title':       'Backend y DevOps',
+    'skill6.title':       'Colaboración y Documentación',
+    /* SERVICES */
+    'svc.eyebrow':        'Servicios',
+    'svc.title':          'Lo que Ofrezco',
+    'svc.intro':          'Además de mi experiencia en gestión de proyectos ágiles, ofrezco servicios de desarrollo web freelance especializados en páginas únicas modernas y mejoras de diseño para sitios existentes.',
+    'svc1.title':         'Single-Page Applications',
+    'svc1.desc':          'Desarrollo páginas web de una sola vista completamente responsivas, rápidas y listas para producción. Desde landing pages hasta portfolios, me encargo del diseño y la implementación de principio a fin.',
+    'svc1.i1':            'Diseño adaptable (mobile-first)',
+    'svc1.i2':            'Modo oscuro / claro integrado',
+    'svc1.i3':            'HTML, CSS, JS vanilla o React',
+    'svc1.i4':            'Soporte para múltiples idiomas',
+    'svc1.i5':            'Animaciones y microinteracciones',
+    'svc2.title':         'Mejora de Diseño',
+    'svc2.desc':          '¿Tu sitio se ve desactualizado o no convierte? Analizo tu página actual y aplico mejoras de UI/UX concretas: tipografía, paleta de colores, espaciado, jerarquía visual y experiencia de usuario.',
+    'svc2.i1':            'Auditoría visual y de usabilidad',
+    'svc2.i2':            'Rediseño de componentes clave',
+    'svc2.i3':            'Optimización de paleta y tipografía',
+    'svc2.i4':            'Mejora de jerarquía y estructura',
+    'svc2.i5':            'Entrega con documentación de cambios',
+    'svc.cta.heading':    '¿Tienes un proyecto en mente?',
+    'svc.cta.sub':        'Hablemos sobre lo que necesitas construir o mejorar.',
+    'svc.cta.btn':        'Contáctame',
+    /* EDUCATION */
+    'edu.eyebrow':        'Educación',
+    'edu.title':          'Formación Académica',
+    'edu1.degree':        'Ing. en Sistemas Computacionales (ISC)',
+    'edu1.inst':          'Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)',
+    'edu2.degree':        'Programa de Idioma Alemán',
+    'edu2.inst':          'Goethe-Institut · Freiburg im Breisgau, Alemania',
+    'edu2.note':          'Inmersión total; habilidades de comunicación intercultural mejoradas.',
+    /* CERTIFICATIONS */
+    'cert.eyebrow':       'Certificaciones',
+    'cert.title':         'Licencias y Credenciales',
+    'cert1.name':         'SAFe 6 Scrum Master',
+    'cert1.issuer':       'Scaled Agile Inc. · May 2024 – May 2025',
+    'cert2.name':         'Certified Associate in Project Management (CAPM)',
+    'cert2.issuer':       'Project Management Institute (PMI) · Jun 2021 – Jun 2024',
+    /* LANGUAGES */
+    'lang.eyebrow':       'Idiomas',
+    'lang.title':         'Comunicación',
+    'lang1.name':         'Español',
+    'lang1.level':        'Nativo',
+    'lang2.name':         'Inglés',
+    'lang2.level':        'Intermedio Alto (B2)',
+    'lang3.name':         'Alemán',
+    'lang3.level':        'Elemental (A2)',
+    'lang4.name':         'Japonés',
+    'lang4.level':        'Aprendiendo (N5)',
+    /* CONTACT */
+    'contact.eyebrow':    'Contacto',
+    'contact.title':      'Trabajemos Juntos',
+    'contact.sub':        'Abierto a roles de Scrum Master, Agile Project Manager y Delivery Coordinator. ¡No dudes en escribirme!',
+    'contact.linkedin':   'Perfil de LinkedIn',
+    /* FOOTER */
+    'footer.text':        '© 2026 César Adrián Galván Medrano',
   },
   en: {
-    metaTitle: "César Adrián Galván Medrano | Single-Page Portfolio",
-    metaDescription:
-      "Portfolio of César Adrián Galván Medrano. I build single-page websites, front-end polish, and agile delivery support at a $30 USD hourly rate.",
-    switchToEnglish: "Switch to English",
-    switchToSpanish: "Switch to Spanish",
-    themeSwitchToLight: "Switch to light mode",
-    themeSwitchToDark: "Switch to dark mode",
-    navHome: "Home",
-    navProfile: "Profile",
-    navServices: "Services",
-    navExperience: "Experience",
-    navStack: "Stack",
-    navContact: "Contact",
-    heroEyebrow: "Single-page websites · Project Management · Scrum delivery",
-    heroTitle: "Single-page websites with a minimal design and delivery focus.",
-    heroDescription:
-      "I am César Adrián Galván Medrano, a software engineer with experience in front-end development, Project Management, and Scrum Master work. I combine clean design, technical execution, and agile follow-through to build websites that are clear, fast, and ready to convert.",
-    heroPrimaryCta: "Request a website",
-    heroWhatsappCta: "WhatsApp",
-    heroRate: "$30 USD per hour",
-    heroModes: "Light mode + dark mode",
-    heroLocation: "Mexico City · Remote",
-    helpLabel: "How I help",
-    helpTitle: "Clear, fast, and professional web presence.",
-    helpItem1: "Single-page landing pages and portfolios",
-    helpItem2: "Visual refinement and front-end polish",
-    helpItem3: "Agile-minded delivery coordination",
-    directContactLabel: "Direct contact",
-    extraValueLabel: "Additional value",
-    extraBadgePm: "Project Manager",
-    extraBadgeScrum: "Scrum Master",
-    extraBadgeReporting: "Stakeholder Reporting",
-    extraBadgeJira: "Jira & Confluence",
-    profileEyebrow: "Profile",
-    profileTitle: "Web development with a delivery mindset.",
-    profileCopy:
-      "My background blends interface building, client websites, application QA, and coordination with technical teams and stakeholders.",
-    profileParagraph1:
-      "I have worked in front-end development with React, TypeScript, JavaScript, HTML, CSS, SCSS, and Vue, plus testing with Jest and Cypress. I have also delivered landing pages and websites for multiple clients in agile environments.",
-    profileParagraph2:
-      "As an Associate Project Manager and Scrum Master, I structured ceremonies, Jira workflows, progress tracking, and stakeholder reporting. That combination means I do not just design the page, I also keep delivery organized, clear, and moving at a solid pace.",
-    profileMetricYears: "Years contributing to web and software projects",
-    profileMetricPm: "Experience in Project Management, Scrum, and delivery follow-up",
-    profileMetricLanguage: "English for collaborating with clients and international teams",
-    servicesEyebrow: "Services",
-    servicesTitle: "Services focused on single-page websites.",
-    servicesCopy:
-      "I work on small projects, focused iterations, or a full landing page with a simple structure oriented to contact and conversion.",
-    service1Title: "Landing pages and portfolios",
-    service1Copy:
-      "Single-page websites with clear visual hierarchy, organized content, and visible calls to action.",
-    service2Title: "Responsive and dark/light mode",
-    service2Copy:
-      "I adjust layout, typography, spacing, and behavior across desktop, tablet, and mobile, including light and dark themes.",
-    service3Title: "Contact and conversion",
-    service3Copy:
-      "I integrate WhatsApp, email, phone, and simple forms so the page helps you receive messages, not just look good.",
-    service4Title: "Agile delivery iterations",
-    service4Copy:
-      "If the project needs it, I can also handle follow-up, priorities, and delivery tracking with a Project Manager / Scrum Master approach.",
-    pricingLabel: "Rate",
-    pricingTitle: "$30 USD per hour",
-    pricingCopy:
-      "Transparent pricing for focused improvements, visual refinement, or a complete single-page website ready to publish.",
-    pricingCheck1: "HTML, CSS, JavaScript, and Bootstrap ready to publish",
-    pricingCheck2: "Structure focused on clarity, service, and contact",
-    pricingCheck3: "Prepared for free hosting and deployment",
-    experienceEyebrow: "Experience",
-    experienceTitle: "Development, Project Management, and Scrum in real projects.",
-    experienceCopy:
-      "Alongside web development, I also have formal experience coordinating work, documentation, follow-up, and stakeholder communication.",
-    experienceHighlightLabel: "Project Manager / Scrum Master",
-    experienceHighlightTitle: "Federal Telecommunications Institute",
-    experienceHighlightItem1: "Defined agile ceremonies, operational structure, and delivery rhythm",
-    experienceHighlightItem2:
-      "Prepared documentation, follow-up, and reporting for leadership and client teams",
-    experienceHighlightItem3: "Tracked incidents, dependencies, and progress in Jira",
-    timeline1Date: "Jun 2024 · Sep 2025",
-    timeline1Title: "Associate Project Manager / Scrum Master · IFT",
-    timeline1Copy:
-      "I coordinated internal and external stakeholders, configured Jira workflows, maintained documentation, and reported delivery status for a public-sector technology initiative.",
-    timeline2Date: "Current freelance work",
-    timeline2Title: "LLM Trainer · Front-end QA · Single-page apps",
-    timeline2Copy:
-      "I refined generated HTML, CSS, and JavaScript applications, validating visual quality, responsiveness, functionality, and consistency before final delivery.",
-    timeline3Date: "May 2022 · Apr 2024",
-    timeline3Title: "Software Engineer (Full-Stack) · Luxoft for Expedia Group",
-    timeline3Copy:
-      "I developed and maintained interface components for flight experiences using React, TypeScript, and JavaScript, with test support in Jest and Cypress.",
-    timeline4Date: "Jul 2018 · May 2022",
-    timeline4Title: "Web Developer · Nerdy Trust",
-    timeline4Copy:
-      "I designed and delivered landing pages and websites for clients such as BAMF, inDrive, Turbodega, Ubuken, TED, and NAFIN, handling iterative changes and improvements.",
-    stackEyebrow: "Stack",
-    stackTitle: "Highlighted technology, QA, and agile delivery skills.",
-    stackCopy:
-      "I do not only work on the visual side of a website. I also understand delivery, follow-up, quality, and project communication.",
-    stackFrontendTitle: "Front-end and development",
-    stackPmTitle: "Project Management / Scrum",
-    stackQualityTitle: "Quality and delivery",
-    stackTeamTitle: "Client and team collaboration",
-    stackLanguagesTitle: "Languages and certifications",
-    stackLanguage1: "Native Spanish",
-    stackLanguage2: "English B2",
-    stackLanguage3: "German A2",
-    stackLanguage4: "Japanese N5 in progress",
-    contactEyebrow: "Contact",
-    contactTitle: "If you need a single-page website, let's talk.",
-    contactCopy:
-      "Tell me if you need a portfolio, a service landing page, or a visual improvement for an existing website.",
-    contactIntro:
-      "I work with a focus on visual clarity, easy contact, and straightforward deliverables that are easy to maintain. If you also need project order, I can support from both the technical and coordination angles.",
-    contactWhatsapp: "Direct WhatsApp",
-    copyEmail: "Copy email",
-    formNameLabel: "Name",
-    formNamePlaceholder: "Your name",
-    formEmailLabel: "Email",
-    formEmailPlaceholder: "your@email.com",
-    formProjectLabel: "Project",
-    formProjectPlaceholder: "Landing page, portfolio, redesign...",
-    formMessageLabel: "Message",
-    formMessagePlaceholder: "Tell me the goal of the site and the style you want.",
-    formSubmit: "Open email draft",
-    footerCopy: "Single-page portfolio of César Adrián Galván Medrano.",
-    footerAvailability: "© {year} · Available for single-page web projects.",
-    copySuccess: "Email copied to clipboard.",
-    copyFailure: "I could not copy it automatically, but the email is visible above.",
-    formFeedback: "I opened your email client with the drafted message.",
-    mailtoSubjectPrefix: "Website inquiry",
-    heroWhatsappMessage: "Hi César, I would like to get a quote for a single-page website.",
-    contactWhatsappMessage: "Hi César, I am interested in your single-page website service.",
-  },
+    /* NAV */
+    'nav.experience':     'Experience',
+    'nav.skills':         'Skills',
+    'nav.services':       'Services',
+    'nav.education':      'Education',
+    'nav.certifications': 'Certifications',
+    'nav.contact':        'Contact',
+    'nav.lang-btn':       'ES',
+    /* HERO */
+    'hero.tag':           'Scrum Master & Project Manager',
+    'hero.summary':       'SAFe-certified Scrum Master and Associate Project Manager with a software engineering background. Experienced in coordinating technology initiatives, facilitating agile ceremonies, and delivering clear stakeholder communication in remote and client-facing environments.',
+    'hero.cta.contact':   'Get in touch',
+    'hero.cta.linkedin':  'LinkedIn',
+    'hero.card.label':    'Quick Overview',
+    'hero.stat.years':    'Years of Experience',
+    'hero.stat.clients':  'Clients Served',
+    'hero.stat.langs':    'Languages',
+    'hero.cert.label':    'Certifications',
+    'hero.loc.label':     'Location',
+    /* EXPERIENCE */
+    'exp.eyebrow':        'Work Experience',
+    'exp.title':          'Professional Journey',
+    'job1.role':          'LLM Trainer',
+    'job1.company':       'Revelo · Remote · Freelance',
+    'job1.period':        'Feb 2027 – Present',
+    'job1.desc':          'AI training and evaluation projects focused on full-stack app generation and single-page front-end development, with strong attention to quality standards and structured feedback.',
+    'job1.b1':            'Reworked and polished AI-generated single-page applications in HTML, CSS, and JavaScript to meet UI references and produce responsive, production-ready results.',
+    'job1.b2':            'Ensured deliverables supported desktop & mobile layouts, light/dark mode, and complete user-facing interactions.',
+    'job1.b3':            'Designed realistic multi-step prompts and follow-up requests to evaluate AI-generated apps in structured delivery scenarios.',
+    'job1.b4':            'Validated application readiness through build, runtime, responsiveness, and feature checks including Docker-based verification.',
+    'job1.b5':            'Produced structured evaluations and final handoff materials supporting consistency and traceability in AI training workflows.',
+    'job2.role':          'LLM Trainer',
+    'job2.company':       'Turing · Remote · Freelance · Client: Apple',
+    'job2.period':        'Sep 2025 – Jan 2026',
+    'job2.desc':          'Multilingual AI training initiatives — designing structured scenarios and evaluating model outputs, strengthening analytical thinking and process discipline.',
+    'job2.b1':            'Designed complex multi-turn workflows and evaluation frameworks with attention to accuracy, quality, and consistency.',
+    'job2.b2':            'Performed structured reviews, identified gaps, and documented corrective feedback for continuous improvement.',
+    'job2.b3':            'Collaborated with cross-functional teams to improve training standards, annotation quality, and delivery consistency.',
+    'job3.role':          'Associate Project Manager / Scrum Master',
+    'job3.company':       'Instituto Federal de Telecomunicaciones (IFT) · Mexico City (Remote)',
+    'job3.period':        'Jun 2024 – Sep 2025',
+    'job3.desc':          'Partnered with internal and external stakeholders to structure project delivery using predictive and agile practices for a public-sector technology initiative.',
+    'job3.b1':            'Defined and introduced the agile operating structure, aligning ceremonies, workflows, and delivery practices with client expectations.',
+    'job3.b2':            'Created and maintained project documentation to keep stakeholders, developers, and deliverables aligned throughout execution.',
+    'job3.b3':            'Proposed and configured Jira-based workflows to track sprint activities, incidents, dependencies, and overall progress.',
+    'job3.b4':            'Prepared recurring and ad hoc progress reports for internal leadership and client stakeholders.',
+    'job3.b5':            'Supported coordination across technical leads, configurators, and developers to surface blockers and maintain execution rhythm.',
+    'job4.role':          'Software Engineer (Full-Stack)',
+    'job4.company':       'Luxoft · Guadalajara, México (Remote) · Client: Expedia Group',
+    'job4.period':        'May 2022 – Apr 2024',
+    'job4.desc':          'Contributed to a product team developing and supporting flight-related user experiences in a SAFe Agile environment.',
+    'job4.b1':            'Built and maintained UI components for the flights page using React, TypeScript, and JavaScript.',
+    'job4.b2':            'Supported quality practices through unit and component testing with Jest and Cypress.',
+    'job4.b3':            'Collaborated in a SAFe Agile setup, supporting team delivery, refinement sessions, and ongoing product improvements.',
+    'job5.role':          'Web Developer',
+    'job5.company':       'Nerdy Trust · Mexico City · Clients: BAMF, enDrive, Turbodega, Ubuken, TED, NAFIN',
+    'job5.period':        'Jul 2018 – May 2022',
+    'job5.desc':          'Designed and delivered landing pages and websites for multiple clients, balancing usability, functionality, and client requirements.',
+    'job5.b1':            'Managed requested changes and iterative improvements across projects for different stakeholders.',
+    'job6.role':          'Intern Developer',
+    'job6.company':       'CODES, Consultoría y Desarrollo de Sistemas · Mexico City',
+    'job6.period':        'Feb – Aug 2017',
+    'job6.desc':          'Supported front-end and back-end development activities for the YAAX app.',
+    'job6.b1':            'Created web pages and implemented requested back-end changes.',
+    /* SKILLS */
+    'skills.eyebrow':     'Capabilities',
+    'skills.title':       'Skills & Tools',
+    'skill1.title':       'Agile & Project Management',
+    'skill2.title':       'Frontend Development',
+    'skill3.title':       'Testing & QA',
+    'skill4.title':       'AI & LLM Training',
+    'skill5.title':       'Backend & DevOps',
+    'skill6.title':       'Collaboration & Docs',
+    /* SERVICES */
+    'svc.eyebrow':        'Services',
+    'svc.title':          'What I Offer',
+    'svc.intro':          'In addition to my agile project management experience, I offer freelance web development services specialising in modern single-page websites and design improvements for existing sites.',
+    'svc1.title':         'Single-Page Applications',
+    'svc1.desc':          'I build fully responsive, fast, production-ready single-view web pages. From landing pages to portfolios, I handle design and implementation from start to finish.',
+    'svc1.i1':            'Responsive design (mobile-first)',
+    'svc1.i2':            'Integrated dark / light mode',
+    'svc1.i3':            'HTML, CSS, vanilla JS or React',
+    'svc1.i4':            'Multi-language support',
+    'svc1.i5':            'Animations & micro-interactions',
+    'svc2.title':         'Design Improvement',
+    'svc2.desc':          'Does your site look outdated or underperform? I audit your current page and apply concrete UI/UX improvements: typography, colour palette, spacing, visual hierarchy and user experience.',
+    'svc2.i1':            'Visual & usability audit',
+    'svc2.i2':            'Redesign of key components',
+    'svc2.i3':            'Palette & typography optimisation',
+    'svc2.i4':            'Hierarchy & structure improvement',
+    'svc2.i5':            'Delivery with change documentation',
+    'svc.cta.heading':    'Have a project in mind?',
+    'svc.cta.sub':        "Let's talk about what you need to build or improve.",
+    'svc.cta.btn':        'Get in touch',
+    /* EDUCATION */
+    'edu.eyebrow':        'Education',
+    'edu.title':          'Academic Background',
+    'edu1.degree':        'B.S.C. Computer Science & Technology (ISC)',
+    'edu1.inst':          'Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)',
+    'edu2.degree':        'German Language Program',
+    'edu2.inst':          'Goethe-Institut · Freiburg im Breisgau, Germany',
+    'edu2.note':          'Full immersion; enhanced cross-cultural communication skills.',
+    /* CERTIFICATIONS */
+    'cert.eyebrow':       'Certifications',
+    'cert.title':         'Licenses & Credentials',
+    'cert1.name':         'SAFe 6 Scrum Master',
+    'cert1.issuer':       'Scaled Agile Inc. · May 2024 – May 2025',
+    'cert2.name':         'Certified Associate in Project Management (CAPM)',
+    'cert2.issuer':       'Project Management Institute (PMI) · Jun 2021 – Jun 2024',
+    /* LANGUAGES */
+    'lang.eyebrow':       'Languages',
+    'lang.title':         'Communication',
+    'lang1.name':         'Spanish',
+    'lang1.level':        'Native',
+    'lang2.name':         'English',
+    'lang2.level':        'Upper-Intermediate (B2)',
+    'lang3.name':         'German',
+    'lang3.level':        'Elementary (A2)',
+    'lang4.name':         'Japanese',
+    'lang4.level':        'Learning (N5)',
+    /* CONTACT */
+    'contact.eyebrow':    'Get in Touch',
+    'contact.title':      "Let's Work Together",
+    'contact.sub':        'Open to Scrum Master, Agile Project Manager, and Delivery Coordinator roles. Feel free to reach out!',
+    'contact.linkedin':   'LinkedIn Profile',
+    /* FOOTER */
+    'footer.text':        '© 2026 César Adrián Galván Medrano',
+  }
 };
 
-const rootElement = document.documentElement;
-const bodyElement = document.body;
-const pageTitle = document.querySelector("#page-title");
-const pageDescription = document.querySelector("#page-description");
-const siteHeader = document.querySelector(".site-header");
-const themeToggle = document.querySelector("#theme-toggle");
-const themeToggleIcon = document.querySelector("#theme-toggle-icon");
-const languageToggle = document.querySelector("#language-toggle");
-const languageToggleLabel = document.querySelector("#language-toggle-label");
-const footerYear = document.querySelector("#footer-year");
-const progressBar = document.querySelector("#scroll-progress-bar");
-const revealItems = document.querySelectorAll("[data-reveal]");
-const sections = Array.from(document.querySelectorAll(".section-shell[id]"));
-const navLinks = Array.from(document.querySelectorAll("#portfolio-nav .nav-link"));
-const translatableNodes = document.querySelectorAll("[data-i18n]");
-const placeholderNodes = document.querySelectorAll("[data-i18n-placeholder]");
-const heroWhatsappLink = document.querySelector("#hero-whatsapp-link");
-const contactWhatsappLink = document.querySelector("#contact-whatsapp-link");
-const copyEmailButton = document.querySelector("#copy-email-button");
-const copyFeedback = document.querySelector("#copy-feedback");
-const contactForm = document.querySelector("#contact-form");
-const formFeedback = document.querySelector("#form-feedback");
-const navbarCollapseElement = document.querySelector("#portfolio-navbar");
-const navbarCollapse =
-  navbarCollapseElement && window.bootstrap
-    ? bootstrap.Collapse.getOrCreateInstance(navbarCollapseElement, { toggle: false })
-    : null;
+/* ══════════════════════════════════════════
+  STATE
+══════════════════════════════════════════ */
+let currentLang  = localStorage.getItem('lang')  || document.documentElement.lang || 'es';
+let currentTheme = localStorage.getItem('theme') || 'light';
 
-const navLinkMap = new Map(
-  navLinks.map((link) => [String(link.getAttribute("href") || "").replace(/^#/, ""), link])
-);
-
-function renderIcons() {
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
-}
-
-function getTranslation(language, key) {
-  return TRANSLATIONS[language]?.[key] ?? TRANSLATIONS.es[key] ?? "";
-}
-
-function getCurrentLanguage() {
-  return rootElement.lang === "en" ? "en" : "es";
-}
-
-function getPreferredLanguage() {
-  return localStorage.getItem(LANGUAGE_STORAGE_KEY) === "en" ? "en" : "es";
-}
-
-function getCurrentTheme() {
-  return rootElement.getAttribute("data-bs-theme") === "dark" ? "dark" : "light";
-}
-
-function setThemeIcon(theme) {
-  if (!themeToggleIcon) {
-    return;
-  }
-
-  themeToggleIcon.innerHTML = `<i data-lucide="${theme === "dark" ? "sun" : "moon"}"></i>`;
-  renderIcons();
-}
-
-function updateThemeToggle(theme) {
-  if (!themeToggle) {
-    return;
-  }
-
-  const language = getCurrentLanguage();
-  const ariaKey = theme === "dark" ? "themeSwitchToLight" : "themeSwitchToDark";
-  themeToggle.setAttribute("aria-label", getTranslation(language, ariaKey));
-  setThemeIcon(theme);
-}
-
-function updateLanguageToggle(language) {
-  if (!languageToggle || !languageToggleLabel) {
-    return;
-  }
-
-  const switchToEnglish = language === "es";
-  languageToggleLabel.textContent = switchToEnglish ? "EN" : "ES";
-  languageToggle.setAttribute(
-    "aria-label",
-    getTranslation(language, switchToEnglish ? "switchToEnglish" : "switchToSpanish")
-  );
-}
-
-function updateFooterYear() {
-  if (!footerYear) {
-    return;
-  }
-
-  const text = getTranslation(getCurrentLanguage(), "footerAvailability");
-  footerYear.textContent = text.replace("{year}", String(new Date().getFullYear()));
-}
-
-function updateWhatsAppLinks(language) {
-  const heroMessage = encodeURIComponent(getTranslation(language, "heroWhatsappMessage"));
-  const contactMessage = encodeURIComponent(getTranslation(language, "contactWhatsappMessage"));
-
-  if (heroWhatsappLink) {
-    heroWhatsappLink.setAttribute("href", `${WHATSAPP_BASE_URL}?text=${heroMessage}`);
-  }
-
-  if (contactWhatsappLink) {
-    contactWhatsappLink.setAttribute("href", `${WHATSAPP_BASE_URL}?text=${contactMessage}`);
-  }
-}
-
-function applyLanguage(language) {
-  rootElement.lang = language;
-  bodyElement.setAttribute("data-language", language);
-
-  if (pageTitle) {
-    pageTitle.textContent = getTranslation(language, "metaTitle");
-  }
-
-  document.title = getTranslation(language, "metaTitle");
-
-  if (pageDescription) {
-    pageDescription.setAttribute("content", getTranslation(language, "metaDescription"));
-  }
-
-  translatableNodes.forEach((node) => {
-    node.textContent = getTranslation(language, node.dataset.i18n);
-  });
-
-  placeholderNodes.forEach((node) => {
-    node.setAttribute("placeholder", getTranslation(language, node.dataset.i18nPlaceholder));
-  });
-
-  updateLanguageToggle(language);
-  updateThemeToggle(getCurrentTheme());
-  updateFooterYear();
-  updateWhatsAppLinks(language);
-}
-
-function toggleLanguage() {
-  const nextLanguage = getCurrentLanguage() === "es" ? "en" : "es";
-  localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
-  applyLanguage(nextLanguage);
-}
-
-function getPreferredTheme() {
-  const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-
-  if (storedTheme === "light" || storedTheme === "dark") {
-    return storedTheme;
-  }
-
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
-
+/* ══════════════════════════════════════════
+  APPLY THEME
+══════════════════════════════════════════ */
 function applyTheme(theme) {
-  rootElement.setAttribute("data-bs-theme", theme);
-  bodyElement.setAttribute("data-bs-theme", theme);
-  updateThemeToggle(theme);
-}
+  currentTheme = theme;
+  document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : '');
+  localStorage.setItem('theme', theme);
 
-function toggleTheme() {
-  const nextTheme = getCurrentTheme() === "dark" ? "light" : "dark";
-  localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
-  applyTheme(nextTheme);
-}
-
-function updateScrollProgress() {
-  if (!progressBar) {
-    return;
+  // Swap icon: moon = light mode active (click → go dark), sun = dark mode active (click → go light)
+  const icon = document.getElementById('theme-icon');
+  if (icon) {
+    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
   }
-
-  const scrollTop = window.scrollY;
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
-  progressBar.style.width = `${progress}%`;
 }
 
-function initRevealObserver() {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.16,
-    }
-  );
+/* ══════════════════════════════════════════
+  APPLY LANGUAGE
+══════════════════════════════════════════ */
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  localStorage.setItem('lang', lang);
 
-  revealItems.forEach((item) => revealObserver.observe(item));
-}
-
-function setActiveNavLink(sectionId) {
-  navLinks.forEach((link) => {
-    const targetId = String(link.getAttribute("href") || "").replace(/^#/, "");
-    const isActive = targetId === sectionId;
-
-    link.classList.toggle("active", isActive);
-
-    if (isActive) {
-      link.setAttribute("aria-current", "page");
-    } else {
-      link.removeAttribute("aria-current");
-    }
+  const dict = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.textContent = dict[key];
   });
 }
 
-function getCurrentSectionId() {
-  const headerOffset = siteHeader?.offsetHeight || 112;
-  const anchorLine = window.scrollY + headerOffset + 32;
-  let currentSectionId = sections[0]?.id || "";
-
-  sections.forEach((section) => {
-    if (anchorLine >= section.offsetTop) {
-      currentSectionId = section.id;
-    }
-  });
-
-  return currentSectionId;
+/* ══════════════════════════════════════════
+  TOGGLE HANDLERS
+══════════════════════════════════════════ */
+function toggleTheme() {
+  applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
 }
 
-function updateCurrentSectionState(forcedSectionId) {
-  const currentSectionId =
-    forcedSectionId && navLinkMap.has(forcedSectionId) ? forcedSectionId : getCurrentSectionId();
-
-  sections.forEach((section) => {
-    section.classList.toggle("is-current", section.id === currentSectionId);
-  });
-
-  setActiveNavLink(currentSectionId);
+function toggleLang() {
+  applyLang(currentLang === 'es' ? 'en' : 'es');
 }
 
-function initAnchorScrolling() {
-  const hashLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
-
-  hashLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const targetId = link.getAttribute("href");
-      const target = targetId ? document.querySelector(targetId) : null;
-
-      if (!target || !targetId) {
-        return;
-      }
-
-      event.preventDefault();
-      updateCurrentSectionState(target.id);
-      window.history.replaceState(null, "", targetId);
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-
-      if (navbarCollapseElement?.classList.contains("show") && navbarCollapse) {
-        navbarCollapse.hide();
+/* ══════════════════════════════════════════
+  SCROLL ANIMATIONS
+══════════════════════════════════════════ */
+function initScrollObserver() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
       }
     });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(
+    '.exp-content, .skill-card, .edu-card, .cert-card, .lang-card, .service-card, .services-cta'
+  ).forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease, border-color 0.3s, background 0.35s';
+    observer.observe(el);
   });
 }
 
-function initCopyEmail() {
-  if (!copyEmailButton || !copyFeedback) {
-    return;
-  }
+/* ══════════════════════════════════════════
+  INIT
+══════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Init Lucide icons (replaces data-lucide elements)
+  lucide.createIcons();
 
-  copyEmailButton.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(EMAIL_ADDRESS);
-      copyFeedback.textContent = getTranslation(getCurrentLanguage(), "copySuccess");
-    } catch (error) {
-      copyFeedback.textContent = getTranslation(getCurrentLanguage(), "copyFailure");
-    }
-  });
-}
+  // Wire up buttons
+  document.getElementById('btn-theme').addEventListener('click', toggleTheme);
+  document.getElementById('btn-lang').addEventListener('click', toggleLang);
 
-function initContactForm() {
-  if (!contactForm || !formFeedback) {
-    return;
-  }
+  // Apply saved / default state (reads localStorage first)
+  applyTheme(currentTheme);
+  applyLang(currentLang);
 
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const language = getCurrentLanguage();
-    const formData = new FormData(contactForm);
-    const name = String(formData.get("name") || "").trim();
-    const email = String(formData.get("email") || "").trim();
-    const project = String(formData.get("project") || "").trim();
-    const message = String(formData.get("message") || "").trim();
-
-    const subject = encodeURIComponent(
-      `${getTranslation(language, "mailtoSubjectPrefix")}: ${project}`
-    );
-    const body = encodeURIComponent(
-      [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Project: ${project}`,
-        "",
-        message,
-      ].join("\n")
-    );
-
-    window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`;
-    formFeedback.textContent = getTranslation(language, "formFeedback");
-  });
-}
-
-function initLanguage() {
-  applyLanguage(getPreferredLanguage());
-
-  if (languageToggle) {
-    languageToggle.addEventListener("click", toggleLanguage);
-  }
-}
-
-function initTheme() {
-  applyTheme(getPreferredTheme());
-
-  if (themeToggle) {
-    themeToggle.addEventListener("click", toggleTheme);
-  }
-
-  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  const onThemePreferenceChange = (event) => {
-    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-
-    if (storedTheme === "light" || storedTheme === "dark") {
-      return;
-    }
-
-    applyTheme(event.matches ? "dark" : "light");
-  };
-
-  if (typeof mediaQuery.addEventListener === "function") {
-    mediaQuery.addEventListener("change", onThemePreferenceChange);
-  } else if (typeof mediaQuery.addListener === "function") {
-    mediaQuery.addListener(onThemePreferenceChange);
-  }
-}
-
-function handleViewportChange() {
-  updateScrollProgress();
-  updateCurrentSectionState();
-}
-
-initLanguage();
-initTheme();
-renderIcons();
-updateScrollProgress();
-updateCurrentSectionState(window.location.hash.replace(/^#/, ""));
-initRevealObserver();
-initAnchorScrolling();
-initCopyEmail();
-initContactForm();
-
-window.addEventListener("scroll", () => {
-  updateScrollProgress();
-  updateCurrentSectionState();
-}, { passive: true });
-
-window.addEventListener("resize", handleViewportChange);
-window.addEventListener("load", handleViewportChange);
-window.addEventListener("hashchange", () => {
-  updateCurrentSectionState(window.location.hash.replace(/^#/, ""));
+  // Scroll animations
+  initScrollObserver();
 });
