@@ -3,6 +3,9 @@
 ══════════════════════════════════════════ */
 const i18n = {
   es: {
+    /* META */
+    'meta.title':         'César Adrián Galván Medrano — Portfolio',
+    'meta.desc':          'Scrum Master certificado SAFe y Project Manager con experiencia en coordinación de iniciativas tecnológicas, desarrollo web y entrenamiento de LLMs. Ciudad de México.',
     /* NAV */
     'nav.experience':     'Experiencia',
     'nav.skills':         'Habilidades',
@@ -10,6 +13,7 @@ const i18n = {
     'nav.education':      'Educación',
     'nav.certifications': 'Certificaciones',
     'nav.contact':        'Contacto',
+    'nav.projects':       'Proyectos',
     'nav.lang-btn':       'EN',
     /* HERO */
     'hero.tag':           'Scrum Master & Project Manager',
@@ -27,9 +31,9 @@ const i18n = {
     'exp.title':          'Trayectoria Profesional',
     'job1.role':          'Entrenador de LLM',
     'job1.company':       'Revelo · Remoto · Freelance',
-    'job1.period':        'Feb 2027 – Presente',
+    'job1.period':        'Feb 2026 – Presente',
     'job1.desc':          'Proyectos de entrenamiento y evaluación de IA enfocados en generación de apps full-stack y desarrollo front-end de una sola página, con especial atención a estándares de calidad y retroalimentación estructurada.',
-    'job1.b1':            'Reelaboré y puliría aplicaciones de una página generadas por IA en HTML, CSS y JavaScript para cumplir referencias de UI y entregar resultados responsivos y listos para producción.',
+    'job1.b1':            'Reelaboré y pulí aplicaciones de una página generadas por IA en HTML, CSS y JavaScript para cumplir referencias de UI y entregar resultados responsivos y listos para producción.',
     'job1.b2':            'Aseguré que los entregables soportaran escritorio y móvil, modo claro/oscuro e interacciones completas para el usuario.',
     'job1.b3':            'Diseñé prompts multi-paso realistas y solicitudes de seguimiento para evaluar apps generadas por IA en escenarios de entrega estructurada.',
     'job1.b4':            'Validé la preparación de aplicaciones mediante verificación de compilación, tiempo de ejecución, responsividad y funcionalidades, incluyendo verificación con Docker.',
@@ -97,6 +101,16 @@ const i18n = {
     'svc.cta.heading':    '¿Tienes un proyecto en mente?',
     'svc.cta.sub':        'Hablemos sobre lo que necesitas construir o mejorar.',
     'svc.cta.btn':        'Contáctame',
+    /* PROJECTS */
+    'proj.eyebrow':       'Proyectos',
+    'proj.title':         'Trabajo Seleccionado',
+    'proj.intro':         'Una muestra de sitios entregados a clientes durante mi etapa como desarrollador web en Nerdy Trust.',
+    'proj1.meta':         'Sitio corporativo · Multilingüe',
+    'proj1.desc':         'Sitio web corporativo con soporte multilingüe (ES/EN), diseño responsivo y dominio propio.',
+    'proj2.meta':         'Cliente: BAMF · Sitio corporativo',
+    'proj2.desc':         'Landing page corporativa para una empresa de procesamiento de alimentos congelados: líneas de producto, instalaciones y contacto comercial.',
+    'proj3.meta':         'Cliente: BAMF · Landing page',
+    'proj3.desc':         'Landing page corporativa para la marca GHgreen, con diseño adaptable a móvil y escritorio.',
     /* EDUCATION */
     'edu.eyebrow':        'Educación',
     'edu.title':          'Formación Académica',
@@ -109,9 +123,9 @@ const i18n = {
     'cert.eyebrow':       'Certificaciones',
     'cert.title':         'Licencias y Credenciales',
     'cert1.name':         'SAFe 6 Scrum Master',
-    'cert1.issuer':       'Scaled Agile Inc. · May 2024 – May 2025',
+    'cert1.issuer':       'Scaled Agile Inc. · Obtenida en May 2024',
     'cert2.name':         'Certified Associate in Project Management (CAPM)',
-    'cert2.issuer':       'Project Management Institute (PMI) · Jun 2021 – Jun 2024',
+    'cert2.issuer':       'Project Management Institute (PMI) · Obtenida en Jun 2021',
     /* LANGUAGES */
     'lang.eyebrow':       'Idiomas',
     'lang.title':         'Comunicación',
@@ -128,10 +142,14 @@ const i18n = {
     'contact.title':      'Trabajemos Juntos',
     'contact.sub':        'Abierto a roles de Scrum Master, Agile Project Manager y Delivery Coordinator. ¡No dudes en escribirme!',
     'contact.linkedin':   'Perfil de LinkedIn',
+    'contact.github':     'Perfil de GitHub',
     /* FOOTER */
     'footer.text':        '© 2026 César Adrián Galván Medrano',
   },
   en: {
+    /* META */
+    'meta.title':         'César Adrián Galván Medrano — Portfolio',
+    'meta.desc':          'SAFe-certified Scrum Master and Project Manager experienced in coordinating technology initiatives, web development, and LLM training. Mexico City.',
     /* NAV */
     'nav.experience':     'Experience',
     'nav.skills':         'Skills',
@@ -139,6 +157,7 @@ const i18n = {
     'nav.education':      'Education',
     'nav.certifications': 'Certifications',
     'nav.contact':        'Contact',
+    'nav.projects':       'Projects',
     'nav.lang-btn':       'ES',
     /* HERO */
     'hero.tag':           'Scrum Master & Project Manager',
@@ -156,7 +175,7 @@ const i18n = {
     'exp.title':          'Professional Journey',
     'job1.role':          'LLM Trainer',
     'job1.company':       'Revelo · Remote · Freelance',
-    'job1.period':        'Feb 2027 – Present',
+    'job1.period':        'Feb 2026 – Present',
     'job1.desc':          'AI training and evaluation projects focused on full-stack app generation and single-page front-end development, with strong attention to quality standards and structured feedback.',
     'job1.b1':            'Reworked and polished AI-generated single-page applications in HTML, CSS, and JavaScript to meet UI references and produce responsive, production-ready results.',
     'job1.b2':            'Ensured deliverables supported desktop & mobile layouts, light/dark mode, and complete user-facing interactions.',
@@ -226,6 +245,16 @@ const i18n = {
     'svc.cta.heading':    'Have a project in mind?',
     'svc.cta.sub':        "Let's talk about what you need to build or improve.",
     'svc.cta.btn':        'Get in touch',
+    /* PROJECTS */
+    'proj.eyebrow':       'Projects',
+    'proj.title':         'Selected Work',
+    'proj.intro':         'A sample of client websites delivered during my time as a web developer at Nerdy Trust.',
+    'proj1.meta':         'Corporate site · Multilingual',
+    'proj1.desc':         'Corporate website with multilingual support (ES/EN), responsive design, and a custom domain.',
+    'proj2.meta':         'Client: BAMF · Corporate site',
+    'proj2.desc':         'Corporate landing page for a frozen-food processing company: product lines, facilities, and business contact.',
+    'proj3.meta':         'Client: BAMF · Landing page',
+    'proj3.desc':         'Corporate landing page for the GHgreen brand, with layouts adapted to mobile and desktop.',
     /* EDUCATION */
     'edu.eyebrow':        'Education',
     'edu.title':          'Academic Background',
@@ -238,9 +267,9 @@ const i18n = {
     'cert.eyebrow':       'Certifications',
     'cert.title':         'Licenses & Credentials',
     'cert1.name':         'SAFe 6 Scrum Master',
-    'cert1.issuer':       'Scaled Agile Inc. · May 2024 – May 2025',
+    'cert1.issuer':       'Scaled Agile Inc. · Issued May 2024',
     'cert2.name':         'Certified Associate in Project Management (CAPM)',
-    'cert2.issuer':       'Project Management Institute (PMI) · Jun 2021 – Jun 2024',
+    'cert2.issuer':       'Project Management Institute (PMI) · Issued Jun 2021',
     /* LANGUAGES */
     'lang.eyebrow':       'Languages',
     'lang.title':         'Communication',
@@ -257,6 +286,7 @@ const i18n = {
     'contact.title':      "Let's Work Together",
     'contact.sub':        'Open to Scrum Master, Agile Project Manager, and Delivery Coordinator roles. Feel free to reach out!',
     'contact.linkedin':   'LinkedIn Profile',
+    'contact.github':     'GitHub Profile',
     /* FOOTER */
     'footer.text':        '© 2026 César Adrián Galván Medrano',
   }
@@ -266,21 +296,18 @@ const i18n = {
   STATE
 ══════════════════════════════════════════ */
 let currentLang  = localStorage.getItem('lang')  || document.documentElement.lang || 'es';
-let currentTheme = localStorage.getItem('theme') || 'light';
+let currentTheme = localStorage.getItem('theme') ||
+  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
 /* ══════════════════════════════════════════
   APPLY THEME
 ══════════════════════════════════════════ */
-function applyTheme(theme) {
+// Only persist on explicit toggle so the site keeps following the
+// system preference until the visitor picks a theme themselves.
+function applyTheme(theme, persist) {
   currentTheme = theme;
   document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : '');
-  localStorage.setItem('theme', theme);
-
-  // Swap icon: moon = light mode active (click → go dark), sun = dark mode active (click → go light)
-  const icon = document.getElementById('theme-icon');
-  if (icon) {
-    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-  }
+  if (persist) localStorage.setItem('theme', theme);
 }
 
 /* ══════════════════════════════════════════
@@ -296,13 +323,22 @@ function applyLang(lang) {
     const key = el.getAttribute('data-i18n');
     if (dict[key] !== undefined) el.textContent = dict[key];
   });
+
+  // Keep document metadata in sync with the active language
+  document.title = dict['meta.title'];
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.content = dict['meta.desc'];
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.content = dict['meta.desc'];
+  const ogLocale = document.querySelector('meta[property="og:locale"]');
+  if (ogLocale) ogLocale.content = lang === 'es' ? 'es_MX' : 'en_US';
 }
 
 /* ══════════════════════════════════════════
   TOGGLE HANDLERS
 ══════════════════════════════════════════ */
 function toggleTheme() {
-  applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  applyTheme(currentTheme === 'dark' ? 'light' : 'dark', true);
 }
 
 function toggleLang() {
@@ -310,9 +346,33 @@ function toggleLang() {
 }
 
 /* ══════════════════════════════════════════
+  MOBILE MENU
+══════════════════════════════════════════ */
+function initMobileMenu() {
+  const nav = document.querySelector('nav');
+  const btnMenu = document.getElementById('btn-menu');
+
+  btnMenu.addEventListener('click', () => {
+    const open = nav.classList.toggle('menu-open');
+    btnMenu.setAttribute('aria-expanded', open);
+  });
+
+  // Close the menu when a section link is tapped
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('menu-open');
+      btnMenu.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+/* ══════════════════════════════════════════
   SCROLL ANIMATIONS
 ══════════════════════════════════════════ */
 function initScrollObserver() {
+  // Leave everything visible if the visitor prefers reduced motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -323,7 +383,7 @@ function initScrollObserver() {
   }, { threshold: 0.1 });
 
   document.querySelectorAll(
-    '.exp-content, .skill-card, .edu-card, .cert-card, .lang-card, .service-card, .services-cta'
+    '.exp-content, .skill-card, .edu-card, .cert-card, .lang-card, .service-card, .services-cta, .proj-card'
   ).forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
@@ -342,6 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Wire up buttons
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
   document.getElementById('btn-lang').addEventListener('click', toggleLang);
+  initMobileMenu();
 
   // Apply saved / default state (reads localStorage first)
   applyTheme(currentTheme);

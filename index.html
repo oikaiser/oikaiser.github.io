@@ -6,11 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>César Adrián Galván Medrano — Portfolio</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <!-- SEO -->
+  <meta name="description"
+    content="Scrum Master certificado SAFe y Project Manager con experiencia en coordinación de iniciativas tecnológicas, desarrollo web y entrenamiento de LLMs. Ciudad de México." />
+  <meta name="author" content="César Adrián Galván Medrano" />
+  <link rel="canonical" href="https://oikaiser.github.io/" />
+  <meta property="og:title" content="César Adrián Galván Medrano — Scrum Master & Project Manager" />
+  <meta property="og:description"
+    content="Scrum Master certificado SAFe y Project Manager con experiencia en coordinación de iniciativas tecnológicas, desarrollo web y entrenamiento de LLMs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oikaiser.github.io/" />
+  <meta property="og:image" content="https://oikaiser.github.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "César Adrián Galván Medrano",
+    "jobTitle": "Scrum Master & Project Manager",
+    "email": "mailto:cesar.galvanmedrano@gmail.com",
+    "url": "https://oikaiser.github.io/",
+    "image": "https://oikaiser.github.io/og-image.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/cesargalvanmedrano/",
+      "https://github.com/oikaiser"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mexico City",
+      "addressCountry": "MX"
+    }
+  }
+  </script>
+
+  <!-- Apply saved/system theme before first paint to avoid a light-mode flash -->
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='14' fill='%23c84b31'/%3E%3Ctext x='50' y='72' font-size='60' font-family='Georgia,serif' fill='%23f5f0e8' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap"
     rel="stylesheet" />
@@ -26,10 +75,11 @@
   <nav>
     <div class="nav-inner">
       <a href="#hero" class="nav-brand">César A. Galván M.</a>
-      <ul class="nav-links mb-0">
+      <ul class="nav-links">
         <li><a href="#experience" data-i18n="nav.experience">Experiencia</a></li>
         <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
         <li><a href="#services" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
         <li><a href="#education" data-i18n="nav.education">Educación</a></li>
         <li><a href="#certifications" data-i18n="nav.certifications">Certificaciones</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
@@ -37,12 +87,19 @@
       <div class="nav-actions">
         <!-- Theme toggle — icon only -->
         <button id="btn-theme" class="nav-btn nav-btn--icon" aria-label="Toggle theme">
-          <i id="theme-icon" class="fas fa-moon"></i>
+          <i data-lucide="moon" class="theme-icon-moon" aria-hidden="true"></i>
+          <i data-lucide="sun" class="theme-icon-sun" aria-hidden="true"></i>
         </button>
         <!-- Language toggle -->
         <button id="btn-lang" class="nav-btn" aria-label="Toggle language">
-          <i class="fas fa-globe"></i>
+          <i data-lucide="globe" aria-hidden="true"></i>
           <span data-i18n="nav.lang-btn">EN</span>
+        </button>
+        <!-- Mobile menu toggle -->
+        <button id="btn-menu" class="nav-btn nav-btn--icon nav-menu-toggle" aria-label="Toggle menu"
+          aria-expanded="false">
+          <i data-lucide="menu" class="menu-icon-open" aria-hidden="true"></i>
+          <i data-lucide="x" class="menu-icon-close" aria-hidden="true"></i>
         </button>
       </div>
     </div>
@@ -67,16 +124,19 @@
           <i data-lucide="mail" style="width:14px;height:14px;"></i>
           <span data-i18n="hero.cta.contact">Contáctame</span>
         </a>
-        <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank" class="btn-outline-custom">
-          <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank" rel="noopener noreferrer"
+          class="btn-outline-custom">
+          <i data-lucide="linkedin" style="width:14px;height:14px;" aria-hidden="true"></i>
           <span data-i18n="hero.cta.linkedin">LinkedIn</span>
         </a>
       </div>
       <div class="social-row fade-in fade-in-4">
-        <a href="mailto:cesar.galvanmedrano@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank" title="LinkedIn"><i
-            class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:cesar.galvanmedrano@gmail.com" title="Email" aria-label="Email"><i data-lucide="mail"
+            aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank" rel="noopener noreferrer"
+          title="LinkedIn" aria-label="LinkedIn"><i data-lucide="linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/oikaiser" target="_blank" rel="noopener noreferrer" title="GitHub"
+          aria-label="GitHub"><i data-lucide="github" aria-hidden="true"></i></a>
       </div>
     </div>
 
@@ -132,7 +192,7 @@
         <div class="exp-content">
           <div class="exp-header">
             <span class="exp-role" data-i18n="job1.role">Entrenador de LLM</span>
-            <span class="exp-period" data-i18n="job1.period">Feb 2027 – Presente</span>
+            <span class="exp-period" data-i18n="job1.period">Feb 2026 – Presente</span>
           </div>
           <div class="exp-company">
             <i data-lucide="building-2" style="width:12px;height:12px;"></i>
@@ -141,7 +201,7 @@
           <p class="exp-desc" data-i18n="job1.desc">Proyectos de entrenamiento y evaluación de IA enfocados en
             generación de apps full-stack y desarrollo front-end de una sola página.</p>
           <ul class="exp-bullets">
-            <li data-i18n="job1.b1">Reelaboré y puliría aplicaciones de una página generadas por IA en HTML, CSS y
+            <li data-i18n="job1.b1">Reelaboré y pulí aplicaciones de una página generadas por IA en HTML, CSS y
               JavaScript para cumplir referencias de UI y entregar resultados responsivos y listos para producción.</li>
             <li data-i18n="job1.b2">Aseguré que los entregables soportaran escritorio y móvil, modo claro/oscuro e
               interacciones completas para el usuario.</li>
@@ -381,7 +441,7 @@
 <!-- ══════════════════════════════════════════
     SERVICES
 ══════════════════════════════════════════ -->
-  <div id="services">
+  <section id="services">
     <div class="inner">
       <div class="section-eyebrow" data-i18n="svc.eyebrow">Servicios</div>
       <h2 class="section-title" data-i18n="svc.title">Lo que Ofrezco</h2>
@@ -439,7 +499,54 @@
         </a>
       </div>
     </div>
-  </div>
+  </section>
+
+<!-- ══════════════════════════════════════════
+    PROJECTS
+══════════════════════════════════════════ -->
+  <section id="projects">
+    <div class="section-eyebrow" data-i18n="proj.eyebrow">Proyectos</div>
+    <h2 class="section-title" data-i18n="proj.title">Trabajo Seleccionado</h2>
+    <p class="projects-intro" data-i18n="proj.intro">
+      Una muestra de sitios entregados a clientes durante mi etapa como desarrollador web en Nerdy Trust.
+    </p>
+    <div class="proj-grid">
+
+      <a class="proj-card" href="https://entiamx.com/es" target="_blank" rel="noopener noreferrer">
+        <div class="proj-top">
+          <span class="proj-name">entia</span>
+          <i data-lucide="arrow-up-right" class="proj-arrow" aria-hidden="true"></i>
+        </div>
+        <p class="proj-meta" data-i18n="proj1.meta">Sitio corporativo · Multilingüe</p>
+        <p class="proj-desc" data-i18n="proj1.desc">Sitio web corporativo con soporte multilingüe (ES/EN), diseño
+          responsivo y dominio propio.</p>
+        <span class="proj-url">entiamx.com</span>
+      </a>
+
+      <a class="proj-card" href="https://yana-bamf.web.app/" target="_blank" rel="noopener noreferrer">
+        <div class="proj-top">
+          <span class="proj-name">Yana — Innovation Foods</span>
+          <i data-lucide="arrow-up-right" class="proj-arrow" aria-hidden="true"></i>
+        </div>
+        <p class="proj-meta" data-i18n="proj2.meta">Cliente: BAMF · Sitio corporativo</p>
+        <p class="proj-desc" data-i18n="proj2.desc">Landing page corporativa para una empresa de procesamiento de
+          alimentos congelados: líneas de producto, instalaciones y contacto comercial.</p>
+        <span class="proj-url">yana-bamf.web.app</span>
+      </a>
+
+      <a class="proj-card" href="https://bamf-website-ghgreen.web.app/" target="_blank" rel="noopener noreferrer">
+        <div class="proj-top">
+          <span class="proj-name">GHgreen</span>
+          <i data-lucide="arrow-up-right" class="proj-arrow" aria-hidden="true"></i>
+        </div>
+        <p class="proj-meta" data-i18n="proj3.meta">Cliente: BAMF · Landing page</p>
+        <p class="proj-desc" data-i18n="proj3.desc">Landing page corporativa para la marca GHgreen, con diseño
+          adaptable a móvil y escritorio.</p>
+        <span class="proj-url">bamf-website-ghgreen.web.app</span>
+      </a>
+
+    </div>
+  </section>
 
 <!-- ══════════════════════════════════════════
     EDUCATION
@@ -449,14 +556,14 @@
     <h2 class="section-title" data-i18n="edu.title">Formación Académica</h2>
     <div class="edu-grid">
       <div class="edu-card">
-        <i class="fas fa-graduation-cap edu-icon"></i>
+        <i data-lucide="graduation-cap" class="edu-icon" aria-hidden="true"></i>
         <div class="edu-year">2021</div>
         <div class="edu-degree" data-i18n="edu1.degree">Ing. en Sistemas Computacionales (ISC)</div>
         <div class="edu-inst" data-i18n="edu1.inst">Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)
         </div>
       </div>
       <div class="edu-card">
-        <i class="fas fa-language edu-icon"></i>
+        <i data-lucide="languages" class="edu-icon" aria-hidden="true"></i>
         <div class="edu-year">Ene – Jun 2019</div>
         <div class="edu-degree" data-i18n="edu2.degree">Programa de Idioma Alemán</div>
         <div class="edu-inst">
@@ -476,17 +583,17 @@
     <h2 class="section-title" data-i18n="cert.title">Licencias y Credenciales</h2>
     <div class="cert-grid">
       <div class="cert-card">
-        <div class="cert-badge"><i class="fas fa-certificate"></i></div>
+        <div class="cert-badge"><i data-lucide="badge-check" aria-hidden="true"></i></div>
         <div>
           <div class="cert-name" data-i18n="cert1.name">SAFe 6 Scrum Master</div>
-          <div class="cert-issuer" data-i18n="cert1.issuer">Scaled Agile Inc. · May 2024 – May 2025</div>
+          <div class="cert-issuer" data-i18n="cert1.issuer">Scaled Agile Inc. · Obtenida en May 2024</div>
         </div>
       </div>
       <div class="cert-card">
-        <div class="cert-badge"><i class="fas fa-award"></i></div>
+        <div class="cert-badge"><i data-lucide="award" aria-hidden="true"></i></div>
         <div>
           <div class="cert-name" data-i18n="cert2.name">Certified Associate in Project Management (CAPM)</div>
-          <div class="cert-issuer" data-i18n="cert2.issuer">Project Management Institute (PMI) · Jun 2021 – Jun 2024
+          <div class="cert-issuer" data-i18n="cert2.issuer">Project Management Institute (PMI) · Obtenida en Jun 2021
           </div>
         </div>
       </div>
@@ -550,7 +657,7 @@
 <!-- ══════════════════════════════════════════
     CONTACT
 ══════════════════════════════════════════ -->
-  <div id="contact">
+  <section id="contact">
     <div class="inner">
       <div>
         <div class="section-eyebrow" data-i18n="contact.eyebrow">Contacto</div>
@@ -558,10 +665,12 @@
         <p class="contact-sub" data-i18n="contact.sub">Abierto a roles de Scrum Master, Agile Project Manager y Delivery
           Coordinator. ¡No dudes en escribirme!</p>
         <div class="contact-social">
-          <a href="mailto:cesar.galvanmedrano@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank" title="LinkedIn"><i
-              class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:cesar.galvanmedrano@gmail.com" title="Email" aria-label="Email"><i data-lucide="mail"
+              aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank" rel="noopener noreferrer"
+            title="LinkedIn" aria-label="LinkedIn"><i data-lucide="linkedin" aria-hidden="true"></i></a>
+          <a href="https://github.com/oikaiser" target="_blank" rel="noopener noreferrer" title="GitHub"
+            aria-label="GitHub"><i data-lucide="github" aria-hidden="true"></i></a>
         </div>
       </div>
       <div>
@@ -572,21 +681,28 @@
           </li>
           <li>
             <span class="icon-wrap"><i data-lucide="phone" style="width:16px;height:16px;"></i></span>
-            +52 55 5509 4243
+            <a href="tel:+525555094243">+52 55 5509 4243</a>
           </li>
           <li>
             <span class="icon-wrap"><i data-lucide="map-pin" style="width:16px;height:16px;"></i></span>
             Mexico City, Mexico
           </li>
           <li>
-            <span class="icon-wrap"><i class="fab fa-linkedin-in" style="font-size:0.85rem;"></i></span>
-            <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank"
+            <span class="icon-wrap"><i data-lucide="linkedin" style="width:16px;height:16px;"
+                aria-hidden="true"></i></span>
+            <a href="https://www.linkedin.com/in/cesargalvanmedrano/" target="_blank" rel="noopener noreferrer"
               data-i18n="contact.linkedin">Perfil de LinkedIn</a>
+          </li>
+          <li>
+            <span class="icon-wrap"><i data-lucide="github" style="width:16px;height:16px;"
+                aria-hidden="true"></i></span>
+            <a href="https://github.com/oikaiser" target="_blank" rel="noopener noreferrer"
+              data-i18n="contact.github">Perfil de GitHub</a>
           </li>
         </ul>
       </div>
     </div>
-  </div>
+  </section>
 
 <!-- ══════════════════════════════════════════
     FOOTER
@@ -596,7 +712,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/lucide@0.395.0/dist/umd/lucide.min.js"></script>
   <script src="script.js"></script>
 </body>
