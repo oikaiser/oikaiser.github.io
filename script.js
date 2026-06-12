@@ -19,6 +19,7 @@ const i18n = {
     'hero.tag':           'Scrum Master & Project Manager',
     'hero.summary':       'Scrum Master certificado SAFe y Project Manager Asociado con experiencia en coordinación de iniciativas tecnológicas, facilitación de ceremonias ágiles y comunicación clara con stakeholders en entornos remotos y con clientes.',
     'hero.cta.contact':   'Contáctame',
+    'hero.cta.cv':        'Descargar CV',
     'hero.cta.linkedin':  'LinkedIn',
     'hero.card.label':    'Resumen Rápido',
     'hero.stat.years':    'Años de Experiencia',
@@ -106,11 +107,11 @@ const i18n = {
     'proj.title':         'Trabajo Seleccionado',
     'proj.intro':         'Una muestra de sitios entregados a clientes durante mi etapa como desarrollador web en Nerdy Trust.',
     'proj1.meta':         'Sitio corporativo · Multilingüe',
-    'proj1.desc':         'Sitio web corporativo con soporte multilingüe (ES/EN), diseño responsivo y dominio propio.',
+    'proj1.desc':         'Sitio multilingüe (ES/EN) para una constructora especializada en infraestructura ferroviaria y eléctrica.',
     'proj2.meta':         'Cliente: BAMF · Sitio corporativo',
     'proj2.desc':         'Landing page corporativa para una empresa de procesamiento de alimentos congelados: líneas de producto, instalaciones y contacto comercial.',
     'proj3.meta':         'Cliente: BAMF · Landing page',
-    'proj3.desc':         'Landing page corporativa para la marca GHgreen, con diseño adaptable a móvil y escritorio.',
+    'proj3.desc':         'Landing page para una empresa de instalación de sistemas fotovoltaicos de energía solar.',
     /* EDUCATION */
     'edu.eyebrow':        'Educación',
     'edu.title':          'Formación Académica',
@@ -163,6 +164,7 @@ const i18n = {
     'hero.tag':           'Scrum Master & Project Manager',
     'hero.summary':       'SAFe-certified Scrum Master and Associate Project Manager with a software engineering background. Experienced in coordinating technology initiatives, facilitating agile ceremonies, and delivering clear stakeholder communication in remote and client-facing environments.',
     'hero.cta.contact':   'Get in touch',
+    'hero.cta.cv':        'Download CV',
     'hero.cta.linkedin':  'LinkedIn',
     'hero.card.label':    'Quick Overview',
     'hero.stat.years':    'Years of Experience',
@@ -250,11 +252,11 @@ const i18n = {
     'proj.title':         'Selected Work',
     'proj.intro':         'A sample of client websites delivered during my time as a web developer at Nerdy Trust.',
     'proj1.meta':         'Corporate site · Multilingual',
-    'proj1.desc':         'Corporate website with multilingual support (ES/EN), responsive design, and a custom domain.',
+    'proj1.desc':         'Multilingual (ES/EN) website for a construction company specialising in railway and electrical infrastructure.',
     'proj2.meta':         'Client: BAMF · Corporate site',
     'proj2.desc':         'Corporate landing page for a frozen-food processing company: product lines, facilities, and business contact.',
     'proj3.meta':         'Client: BAMF · Landing page',
-    'proj3.desc':         'Corporate landing page for the GHgreen brand, with layouts adapted to mobile and desktop.',
+    'proj3.desc':         'Landing page for a photovoltaic (solar energy) systems installation company.',
     /* EDUCATION */
     'edu.eyebrow':        'Education',
     'edu.title':          'Academic Background',
@@ -323,6 +325,10 @@ function applyLang(lang) {
     const key = el.getAttribute('data-i18n');
     if (dict[key] !== undefined) el.textContent = dict[key];
   });
+
+  // CV download matches the active language
+  const btnCv = document.getElementById('btn-cv');
+  if (btnCv) btnCv.setAttribute('href', lang === 'es' ? 'cv-cesar-galvan-es.pdf' : 'cv-cesar-galvan-en.pdf');
 
   // Keep document metadata in sync with the active language
   document.title = dict['meta.title'];

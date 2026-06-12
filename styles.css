@@ -919,6 +919,17 @@ section {
   transform: translate(2px, -2px);
 }
 
+.proj-thumb {
+  display: block;
+  width: calc(100% + 4rem);
+  height: auto;
+  margin: -2rem -2rem 1.4rem;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 1px solid var(--border);
+}
+
 .proj-meta {
   font-family: var(--mono);
   font-size: 0.65rem;
