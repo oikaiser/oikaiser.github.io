@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root { --ink: #0e0e0e; --accent: #c84b31; --muted: #6b6560; --border: #ddd8ce; }
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Outfit', sans-serif; font-weight: 300; color: var(--ink); font-size: 8.7pt; line-height: 1.38; padding: 8mm 14mm; }
+
+  header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--ink); padding-bottom: 3mm; margin-bottom: 3.5mm; }
+  h1 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 23pt; line-height: 1.05; }
+  h1 em { color: var(--accent); }
+  .role { font-family: 'DM Mono', monospace; font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-top: 2mm; }
+  .contact { text-align: right; font-size: 8pt; color: var(--muted); line-height: 1.7; }
+  .contact strong { color: var(--ink); font-weight: 500; }
+
+  h2 { font-family: 'DM Mono', monospace; font-weight: 500; font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin: 2.6mm 0 1.4mm; display: flex; align-items: center; gap: 2.5mm; }
+  h2::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .summary { color: var(--muted); }
+
+  .job { margin-bottom: 1.9mm; page-break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-role { font-family: 'DM Serif Display', serif; font-size: 10.5pt; }
+  .job-period { font-family: 'DM Mono', monospace; font-size: 7pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+  .job-company { font-family: 'DM Mono', monospace; font-size: 7.3pt; color: var(--muted); margin: 0.4mm 0 0.8mm; }
+  .job ul { list-style: none; margin-top: 0.8mm; }
+  .job li { padding-left: 4mm; position: relative; }
+  .job li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 8pt; }
+
+  .columns { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; }
+  .skill-row { margin-bottom: 1.2mm; }
+  .skill-row strong { font-weight: 500; }
+  .item { margin-bottom: 1.6mm; }
+  .item-title { font-weight: 500; }
+  .item-sub { font-size: 8pt; color: var(--muted); }
+  .langs { display: flex; flex-wrap: wrap; gap: 1.5mm 5mm; }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>César <em>Adrián</em> Galván Medrano</h1>
+      <div class="role">Scrum Master &amp; Project Manager</div>
+    </div>
+    <div class="contact">
+      <strong>cesar.galvanmedrano@gmail.com</strong><br>
+      +52 55 1080 7976 · Ciudad de México, México<br>
+      linkedin.com/in/cesargalvanmedrano<br>
+      github.com/oikaiser · oikaiser.github.io
+    </div>
+  </header>
+
+  <p class="summary">Scrum Master certificado SAFe y Project Manager con experiencia en coordinación de iniciativas tecnológicas, facilitación de ceremonias ágiles, seguimiento del avance de entrega y reporte de estatus a stakeholders. Combina una base en ingeniería de software con experiencia práctica estructurando flujos de trabajo en Jira, manteniendo documentación de proyecto y apoyando equipos multifuncionales en entornos remotos y con clientes.</p>
+
+  <h2>Experiencia</h2>
+
+  <div class="job">
+    <div class="job-head"><span class="job-role">Project Manager de TI</span><span class="job-period">May 2026 – Presente</span></div>
+    <div class="job-company">NTT DATA · Remoto · Contrato · Cliente: Banamex</div>
+    <p>Programa de prevención de fraude y tecnología de riesgo para una institución financiera de primer nivel: gobernanza de releases y entrega interfuncional de múltiples iniciativas simultáneas en un entorno regulado.</p>
+    <ul>
+      <li>PM líder de un release de pipeline de datos en modo feature-off: cronogramas, aprobaciones de seguridad, arquitectura y desempeño, y documentación del release.</li>
+      <li>Re-planifiqué el calendario tras identificar una dependencia de ambiente de pruebas, formalizando impedimento y riesgo (mitigación, responsables, criterios de cierre).</li>
+      <li>Elaboré artefactos de gobernanza (aprobaciones, registros de riesgos, minutas, reportes de estatus) y consolidé el estatus de tres iniciativas para el responsable de tecnología a nivel director.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><span class="job-role">Entrenador de LLM</span><span class="job-period">Ene 2026 – May 2026</span></div>
+    <div class="job-company">Revelo · Remoto · Freelance</div>
+    <p>Entrenamiento y evaluación de IA en generación de apps full-stack y desarrollo front-end de una sola página. Reelaboré aplicaciones generadas por IA hasta dejarlas responsivas y listas para producción, y validé compilación, ejecución y funcionalidades, incluyendo verificación con Docker.</p>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><span class="job-role">Entrenador de LLM</span><span class="job-period">Sep 2025 – Ene 2026</span></div>
+    <div class="job-company">Turing · Remoto · Freelance · Cliente: Apple</div>
+    <p>Entrenamiento de IA multilingüe: diseño de flujos multi-turno y marcos de evaluación con atención a precisión, calidad y consistencia.</p>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><span class="job-role">Project Manager Asociado / Scrum Master</span><span class="job-period">Jun 2024 – Sep 2025</span></div>
+    <div class="job-company">Instituto Federal de Telecomunicaciones (IFT) · Ciudad de México (Remoto)</div>
+    <p>Estructuré la entrega de una iniciativa tecnológica del sector público con prácticas predictivas y ágiles.</p>
+    <ul>
+      <li>Definí la estructura operativa ágil: ceremonias, flujos de trabajo y prácticas de entrega alineadas con el cliente.</li>
+      <li>Configuré flujos en Jira para sprints, incidentes y dependencias; preparé informes recurrentes para liderazgo y cliente.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><span class="job-role">Ingeniero de Software (Full-Stack)</span><span class="job-period">May 2022 – Abr 2024</span></div>
+    <div class="job-company">Luxoft · Guadalajara (Remoto) · Cliente: Expedia Group</div>
+    <p>Desarrollé componentes de UI para la página de vuelos con React y TypeScript, con pruebas en Jest y Cypress, en un entorno SAFe Ágil.</p>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><span class="job-role">Desarrollador Web</span><span class="job-period">Jul 2018 – May 2022</span></div>
+    <div class="job-company">Nerdy Trust · Ciudad de México · Clientes: BAMF, enDrive, Turbodega, Ubuken, TED, NAFIN</div>
+    <p>Diseñé y entregué landing pages y sitios web para múltiples clientes con React, Vue.js y Django, gestionando cambios y mejoras iterativas.</p>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><span class="job-role">Desarrollador Interno</span><span class="job-period">Feb – Ago 2017</span></div>
+    <div class="job-company">CODES, Consultoría y Desarrollo de Sistemas · Ciudad de México</div>
+    <p>Apoyé el desarrollo front-end y back-end de la app YAAX.</p>
+  </div>
+
+  <h2>Habilidades</h2>
+  <div class="skill-row"><strong>Ágil y gestión:</strong> Scrum · SAFe · Release &amp; Risk Management · Stakeholder Reporting · Jira · Confluence · MS Project · SharePoint</div>
+  <div class="skill-row"><strong>Desarrollo:</strong> React · TypeScript · JavaScript · HTML / CSS · Vue.js · Django / Python · GraphQL · Jest · Cypress · Docker</div>
+
+  <div class="columns">
+    <div>
+      <h2>Educación</h2>
+      <div class="item">
+        <div class="item-title">Ing. en Sistemas Computacionales (2021)</div>
+        <div class="item-sub">Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)</div>
+      </div>
+      <div class="item">
+        <div class="item-title">Programa de Idioma Alemán (2019)</div>
+        <div class="item-sub">Goethe-Institut · Freiburg im Breisgau, Alemania</div>
+      </div>
+    </div>
+    <div>
+      <h2>Certificaciones</h2>
+      <div class="item">
+        <div class="item-title">SAFe 6 Scrum Master · Native-AI SAFe 6 Scrum Master</div>
+        <div class="item-sub">Scaled Agile Inc. · Oct 2026 – Oct 2027</div>
+      </div>
+      <div class="item">
+        <div class="item-title">Certified Associate in Project Management (CAPM)</div>
+        <div class="item-sub">Project Management Institute · Obtenida en 2021</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Idiomas</h2>
+  <div class="langs">
+    <span><strong>Español</strong> — Nativo</span>
+    <span><strong>Inglés</strong> — B2</span>
+    <span><strong>Alemán</strong> — A2</span>
+    <span><strong>Japonés</strong> — N5 (aprendiendo)</span>
+  </div>
+</body>
+</html>
